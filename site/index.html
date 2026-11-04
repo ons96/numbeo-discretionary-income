@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where your salary goes furthest — city discretionary income ranking</title>
+<meta name="description" content="Cities ranked by how much money is left over each year after tax, living costs and rent. Data from Numbeo, rebuilt automatically.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-top">
+    <h1>Where your salary goes furthest</h1>
+    <div class="meta">
+      <span id="updated">loading…</span>
+      <select id="currency" aria-label="Currency"></select>
+    </div>
+  </div>
+
+  <div class="scenarios" role="tablist" aria-label="Rent scenario">
+    <button role="tab" data-scenario="room3brOutside">Room in 3-bed, outside centre</button>
+    <button role="tab" data-scenario="room3brCentre">Room in 3-bed, centre</button>
+    <button role="tab" data-scenario="own1brOutside">Own 1-bed, outside centre</button>
+    <button role="tab" data-scenario="own1brCentre">Own 1-bed, centre</button>
+  </div>
+
+  <div class="filters">
+    <input id="search" type="search" placeholder="Search city or country…" autocomplete="off" spellcheck="false">
+    <select id="country" aria-label="Country"><option value="">All countries</option></select>
+    <label class="toggle"><input id="complete" type="checkbox" checked> Complete data only</label>
+  </div>
+</header>
+
+<main>
+  <section id="summary" class="summary"></section>
+
+  <div class="tablewrap">
+    <table id="table">
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th data-sort="city">City</th>
+          <th class="num" data-sort="disc">Left over / year</th>
+          <th class="num" data-sort="disc_m">Left over / month</th>
+          <th class="num hide-sm" data-sort="salary">Net salary / month</th>
+          <th class="num hide-sm" data-sort="expenses">Living costs / month</th>
+          <th class="num" data-sort="rent">Rent / month</th>
+          <th class="num hide-sm" data-sort="share">Rent share of salary</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="more">
+    <button id="loadmore" hidden>Show more</button>
+    <p id="empty" hidden>No cities match. Loosen the filters.</p>
+  </div>
+
+  <footer>
+    <h2>How this is calculated</h2>
+    <p>
+      Every number comes from <a href="https://www.numbeo.com/cost-of-living/" rel="nofollow noopener">Numbeo</a>,
+      fetched in USD and converted to the currency you pick.
+    </p>
+    <ul>
+      <li><b>Net salary</b> — Numbeo's “Average Monthly Net Salary (After Tax)” × 12.</li>
+      <li><b>Living costs</b> — Numbeo's “estimated monthly costs for a single person, excluding rent” × 12.</li>
+      <li><b>Rent</b> — either a whole 1-bedroom apartment, or a room in a 3-bedroom flat (a third of the 3-bedroom rent), in the city centre or outside it.</li>
+      <li><b>Left over</b> — salary − living costs − rent, per year.</li>
+    </ul>
+    <p class="caveat">
+      Numbeo figures are crowd-sourced averages, skew towards people who fill in such sites, and can lag reality.
+      A city with a handful of contributors is noise, not truth — treat the tail of the list as a starting point,
+      not a verdict.
+    </p>
+    <p class="links">
+      <a href="data.csv" download>Download the data (CSV)</a> ·
+      <a href="https://github.com/ons96/numbeo-discretionary-income">Source &amp; scraper</a>
+    </p>
+    <p class="stamp" id="stamp"></p>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

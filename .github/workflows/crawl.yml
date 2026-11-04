@@ -23,6 +23,10 @@ on:
       max_age_days:
         description: "Refetch a city page if older than this many days"
         default: "30"
+      refresh_lists:
+        description: "Also crawl the full country/city list (235 requests, ~6 min)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -51,12 +55,8 @@ jobs:
         run: node scraper/probe.mjs || true
 
       - name: Country and city list
-        run: |
-          if [ ! -f data/lists.json ] || [ -n "$(find data/lists.json -mtime +30 2>/dev/null)" ]; then
-            node scraper/crawl-lists.mjs
-          else
-            echo "list is fresh, reusing it"
-          fi
+        if: inputs.refresh_lists == 'true'
+        run: node scraper/crawl-lists.mjs
 
       - name: Prices by city (one request)
         run: node scraper/crawl-bulk.mjs

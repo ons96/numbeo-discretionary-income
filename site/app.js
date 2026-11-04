@@ -10,6 +10,10 @@ const LABELS = {
   room3brOutside: "Room, outside",
 };
 
+// The page opens comparing every city against this one; leave it blank for no
+// baseline, or name any city in the dataset.
+const DEFAULT_BASELINE = "Oakville, Canada";
+
 const state = {
   scenario: "best",
   currency: "USD",
@@ -77,6 +81,7 @@ async function load() {
   buildCurrency();
   buildCountries();
   buildBaselineList();
+  applyDefaultBaseline();
   wire();
   render();
 }
@@ -163,6 +168,14 @@ function wire() {
 function buildBaselineList() {
   const names = rows.map((r) => r.city).sort((a, b) => a.localeCompare(b));
   $("#baseline-list").innerHTML = names.map((n) => `<option value="${esc(n)}"></option>`).join("");
+}
+
+function applyDefaultBaseline() {
+  if (!DEFAULT_BASELINE) return;
+  const hit = rows.find((r) => r.city.toLowerCase() === DEFAULT_BASELINE.toLowerCase());
+  if (!hit) return;
+  state.baseline = hit.slug;
+  $("#baseline").value = hit.city;
 }
 
 /** Set (or clear) the city every other city has to match on left-over money. */

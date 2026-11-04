@@ -1,30 +1,27 @@
 name: Crawl
 
-# Fetches numbeo.com and commits the data.
+# Refreshes the data from numbeo.com and commits it; Publish then rebuilds the
+# site. Two requests, about five seconds.
 #
-# numbeo refuses datacenter IP ranges (GitHub's hosted runners are Azure) with
-# "Access Forbidden" 503, so this workflow normally needs a runner with a
-# residential IP: a self-hosted runner at home, with the repo variable
-# CRAWL_RUNNER set to its label.
-#
-# The whole core dataset is one request (prices_by_city.jsp returns every city's
-# salary and the four rents in a single table), so even a slow link is fine.
-# The optional per-city pass adds the "single person living costs" figure.
+# numbeo refuses datacenter IPs (GitHub's hosted runners included) with
+# "503 Access Forbidden", so lib/http.mjs falls back to fetching through
+# r.jina.ai, a reader service that returns the same HTML from its own address.
+# If you happen to have a runner with a residential IP, set the repository
+# variable CRAWL_RUNNER to its label and the two requests go out directly.
 
 on:
   schedule:
-    # daily; only actually runs when CRAWL_RUNNER is set (see the job condition)
     - cron: "37 5 * * *"
   workflow_dispatch:
     inputs:
       page_budget:
-        description: "City pages to fetch for living-cost data (0 = skip)"
+        description: "Extra city pages for real living-cost figures (0 = skip)"
         default: "0"
       max_age_days:
         description: "Refetch a city page if older than this many days"
         default: "30"
       refresh_lists:
-        description: "Also crawl the full country/city list (235 requests, ~6 min)"
+        description: "Also crawl the full country/city list (235 requests)"
         type: boolean
         default: false
 
@@ -37,34 +34,29 @@ concurrency:
 
 env:
   CONCURRENCY: 1
-  MIN_GAP_MS: 1500
+  MIN_GAP_MS: 1200
 
 jobs:
   crawl:
-    # a scheduled run is pointless on a hosted runner (numbeo blocks it), so it
-    # only fires once a residential runner has been registered
-    if: github.event_name != 'schedule' || vars.CRAWL_RUNNER != ''
     runs-on: ${{ vars.CRAWL_RUNNER || 'ubuntu-latest' }}
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Probe
-        run: node scraper/probe.mjs || true
+      - name: Prices by city (salary + the four rents)
+        run: node scraper/crawl-bulk.mjs
+
+      - name: Index table
+        run: node scraper/crawl-indices.mjs
 
       - name: Country and city list
         if: inputs.refresh_lists == 'true'
         run: node scraper/crawl-lists.mjs
 
-      - name: Prices by city (one request)
-        run: node scraper/crawl-bulk.mjs
-
-      - name: Index table (one request)
-        run: node scraper/crawl-indices.mjs
-
-      - name: Optional per-city pages
+      - name: Extra city pages
         if: inputs.page_budget != '0'
         run: node scraper/crawl-cities.mjs --budget=${{ inputs.page_budget }} --max-age-days=${{ inputs.max_age_days || 30 }}
 
@@ -73,7 +65,7 @@ jobs:
           node scraper/merge.mjs
           node -e "
             const d = require('./data/cities.json');
-            if (!d.withData) { console.log('::error::nothing scraped - see the probe step'); process.exit(1); }
+            if (!d.withData) { console.log('::error::nothing scraped'); process.exit(1); }
           "
 
       - name: Commit

@@ -64,10 +64,8 @@ site/                     static page, no build step
 
 Two workflows:
 
-* **Crawl** (manual) fetches the data and commits it. It needs a residential IP:
-  numbeo answers datacenter ranges with `503 Access Forbidden`, so GitHub's
-  hosted runners cannot do it. Set the repo variable `CRAWL_RUNNER` to a
-  self-hosted runner's label, or run `scripts/vps-crawl.sh` from a home machine.
+* **Crawl** (daily, 05:37 UTC) fetches those two pages, merges, and commits
+  `data/`.
 * **Publish** (on every push) rebuilds and deploys the page.
 
 ### Living costs
@@ -131,24 +129,25 @@ visible in the data rather than silently dropping cities.
 
 ---
 
-## Wait — why isn't the crawl in the Action?
+## The datacenter problem
 
-Because it can't be. numbeo.com answers requests from datacenter IP ranges
-(GitHub's hosted runners are Azure) with **503 Access Forbidden** — with or
-without cookies, any user agent. From a residential connection the same URLs
-return 200. It is an IP-class block, not a rate limit, so no header trick gets
-around it, and GitHub Pages + Actions can therefore only *publish* the data.
+numbeo.com answers requests from datacenter IP ranges — GitHub's hosted runners
+are Azure — with **503 Access Forbidden**, cookies or no cookies, any user agent.
+From a normal connection the same URLs return 200. It is an IP-class block, not
+a rate limit, so no header tweak fixes it.
 
-Ways to refresh it:
+Instead of asking for a server, `scraper/lib/http.mjs` tries the direct request
+first and, if the answer is 403/429/503, fetches the same URL through
+[r.jina.ai](https://r.jina.ai/), a public reader service that returns the page's
+original HTML from its own address. The parsers never notice. Two requests a day
+is well inside its free tier, and the workflow log prints `fetched via reader`
+when that path was used.
 
-* **Self-hosted runner at home** — set the repo variable `CRAWL_RUNNER` to its
-  label, then run the *Crawl* workflow. Actions orchestrates, the data comes
-  from your own IP.
-* **A small machine or VPS on a non-datacenter IP** — `scripts/vps-crawl.sh`
-  with a cron entry. It crawls a budgeted slice, commits, pushes; the *Publish*
-  workflow rebuilds the site on every push.
-* **From the phone, by asking Buddy** — `node scraper/crawl-cities.mjs
-  --budget=300` then commit and push.
+If you do have a machine with a residential IP, set the repository variable
+`CRAWL_RUNNER` to the label of a self-hosted runner and the requests go out
+directly instead; `scripts/vps-crawl.sh` does the same thing from cron without
+Actions.
 
-Numbeo's own API exists and would remove all of this: 260 USD/month for up to
-200k queries. That is the price of not crawling.
+Fallbacks, if the reader ever disappears: run the crawler from a home machine
+(`node scraper/crawl-bulk.mjs && node scraper/crawl-indices.mjs`, then commit),
+or buy numbeo's own API — 260 USD/month for up to 200k queries.

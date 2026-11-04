@@ -20,8 +20,8 @@ const ITEMS = {
 const ORDER = Object.keys(ITEMS);
 
 const url =
-  "https://www.numbeo.com/cost-of-living/prices_by_city.jsp" +
-  ORDER.map((id) => `&itemId=${id}`).join("") +
+  "https://www.numbeo.com/cost-of-living/prices_by_city.jsp?" +
+  ORDER.map((id) => `itemId=${id}`).join("&") +
   "&displayCurrency=USD";
 
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
@@ -33,6 +33,8 @@ async function main() {
     console.error(`::error::prices_by_city returned ${res.status || res.error}`);
     process.exit(1);
   }
+
+  log(`fetched via ${res.via || "direct"} (${res.body.length} bytes)`);
 
   const rows = parseBulkTable(res.body);
   log(`${rows.length} cities in the table`);

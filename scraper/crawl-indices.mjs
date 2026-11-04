@@ -16,6 +16,8 @@ async function main() {
     console.error(`::error::rankings returned ${res.status || res.error}`);
     process.exit(1);
   }
+  log(`fetched via ${res.via || "direct"} (${res.body.length} bytes)`);
+
   const cities = parseRankings(res.body);
   await mkdir("data", { recursive: true });
   await writeFile("data/indices.json", JSON.stringify({ generatedAt: new Date().toISOString(), count: cities.length, cities }));

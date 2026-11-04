@@ -1,9 +1,13 @@
 # Running the crawl from your VPS
 
-numbeo.com answers datacenter IP ranges with `503 Access Forbidden`, which is why
-the *Crawl* workflow cannot run on GitHub's hosted runners. Your VPS is not on
-such a range, so it makes a perfect runner: GitHub still schedules the job, the
-VPS does the two requests, the data is committed, and Pages rebuilds itself.
+**Optional.** The daily crawl already runs on GitHub's own runners: when numbeo
+refuses the datacenter IP, `scraper/lib/http.mjs` fetches the two pages through
+r.jina.ai instead. Use a self-hosted runner only if you would rather the
+requests came from your own connection (no third party in the path, and the
+optional per-city pass can run at full speed).
+
+With a runner here, GitHub schedules the job, the machine does the requests, the
+data is committed, and Publish rebuilds the site.
 
 Everything below runs on the VPS (Debian/Ubuntu assumed, root or a user with sudo).
 
@@ -28,7 +32,7 @@ sudo ./svc.sh start
 sudo ./svc.sh status
 ```
 
-## 2. Point the workflow at it
+## 2. Point the workflow at it (optional)
 
 In the repo: Settings → Secrets and variables → Actions → Variables → New:
 

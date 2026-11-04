@@ -6,7 +6,7 @@
 //
 //   node scraper/merge.mjs
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readJson, writeIfChanged } from "./lib/store.mjs";
 
 const slugify = (s) =>
   s
@@ -15,14 +15,6 @@ const slugify = (s) =>
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
-
-async function readJson(path, fallback) {
-  try {
-    return JSON.parse(await readFile(path, "utf8"));
-  } catch {
-    return fallback;
-  }
-}
 
 async function main() {
   const bulk = await readJson("data/bulk.json", { cities: [] });
@@ -112,13 +104,16 @@ async function main() {
   const cities = [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
   const withData = cities.filter((c) => c.salary != null || c.rent.oneBedCentre != null).length;
 
-  await writeFile(
-    "data/cities.json",
-    JSON.stringify({ generatedAt: new Date().toISOString(), count: cities.length, withData, cities })
-  );
+  const changed = await writeIfChanged("data/cities.json", {
+    generatedAt: new Date().toISOString(),
+    count: cities.length,
+    withData,
+    cities,
+  });
 
   console.log(
-    `data/cities.json: ${cities.length} cities, ${withData} with salary or rent, ` +
+    `data/cities.json ${changed ? "updated" : "unchanged"}: ${cities.length} cities, ` +
+      `${withData} with salary or rent, ` +
       `${cities.filter((c) => c.singleExpenses != null).length} with living-cost data`
   );
 }

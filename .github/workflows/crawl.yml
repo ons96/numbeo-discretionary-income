@@ -24,6 +24,10 @@ on:
         description: "Also crawl the full country/city list (235 requests)"
         type: boolean
         default: false
+      force:
+        description: "Fetch even if the cached data is less than 20 hours old"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -50,10 +54,14 @@ jobs:
           node-version: 22
 
       - name: Prices by city (salary + the four rents)
-        run: node scraper/crawl-bulk.mjs
+        run: |
+          hours=20; [ "${{ inputs.force }}" = "true" ] && hours=0
+          node scraper/crawl-bulk.mjs --max-age-hours=$hours
 
       - name: Index table
-        run: node scraper/crawl-indices.mjs
+        run: |
+          hours=20; [ "${{ inputs.force }}" = "true" ] && hours=0
+          node scraper/crawl-indices.mjs --max-age-hours=$hours
 
       - name: Country and city list
         if: inputs.refresh_lists == 'true'
@@ -72,14 +80,22 @@ jobs:
           "
 
       - name: Commit
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --quiet --cached || git commit -m "data: crawl $(date -u +%Y-%m-%d)"
+          if git diff --quiet --cached; then
+            echo "numbeo returned the same numbers, nothing to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "data: crawl $(date -u +%Y-%m-%d)"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Publish
+        if: steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run publish.yml --ref main

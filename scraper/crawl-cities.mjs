@@ -74,8 +74,25 @@ async function main() {
     if (!fresh) todo.push({ ...p, last: hit && hit.scrapedAt ? Date.parse(hit.scrapedAt) : -1 });
   }
 
-  // never scraped first, then whatever has been waiting longest
-  todo.sort((a, b) => a.last - b.last || a.country.localeCompare(b.country));
+  // never scraped first, then whatever has been waiting longest; cities that
+  // numbeo ranks (they are the ones with enough data to be meaningful) jump
+  // the queue so the very first runs produce a useful page.
+  const ranked = new Set();
+  const idx = await readJson("data/indices.json", { cities: [] });
+  for (const r of idx.cities || []) {
+    const i = (r.name || "").lastIndexOf(",");
+    if (i === -1) continue;
+    ranked.add(`${r.name.slice(i + 1).trim()}||${r.name.slice(0, i).trim()}`);
+  }
+  const rankOf = (p) => (ranked.has(key(p.country, p.city)) ? 0 : 1);
+
+  todo.sort(
+    (a, b) =>
+      rankOf(a) - rankOf(b) ||
+      a.last - b.last ||
+      a.country.localeCompare(b.country) ||
+      a.city.localeCompare(b.city)
+  );
 
   const budgeted = todo.slice(0, Number.isFinite(BUDGET) ? BUDGET : todo.length);
 

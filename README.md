@@ -76,14 +76,38 @@ other city shows **≈** and uses an estimate: cost-of-living index / 100 × the
 New York basket, with the anchor taken from the median of the cities that do
 have real figures. The estimates get better as pages arrive.
 
-### Being a good citizen (and not getting banned)
+### Requests, caching, and getting blocked
 
-* two requests per refresh, one at a time, ~1.5 s apart;
-* the per-city pass is budgeted and resumable, nothing is fetched twice;
-* a run stops itself the moment numbeo answers with a far-future `Retry-After`
-  instead of retrying into a longer ban.
+A refresh is **two requests a day** - that is the whole budget:
 
-If it does stop, `node scraper/probe.mjs` shows why.
+| request | what it returns |
+| --- | --- |
+| `prices_by_city.jsp` | salary + the four rents, all 566 cities |
+| `rankings_current.jsp` | cost-of-living / rent / purchasing-power indices |
+
+Everything else is optional (`--page_budget`, `refresh_lists`) and off by default.
+
+On top of that:
+
+* **20-hour floor.** A run skips the fetch when the cached file is younger than
+  20 hours (`--max-age-hours`), so reruns, retries and stray dispatches cost
+  nothing. `--force` overrides it.
+* **The cache is the source of truth.** `data/*.json` is committed and is what
+  the site is built from. A failed fetch never touches it - no truncation, no
+  empty table, no "0 cities" deploy.
+* **Bad pages are refused.** A table with fewer than 80 % of the rows we already
+  have is treated as a failure, not as new data.
+* **Blocks are warnings for 45 days.** If numbeo (or the reader) refuses, the run
+  logs a warning, keeps the old numbers and stays green. Only when the cache is
+  over `STALE_DAYS` (45) does it go red - that is the point at which the site
+  really is out of date.
+* **Silence is not a commit.** Files are written only when something changed, so
+  a quiet day produces no commit and no redeploy.
+
+So a month-long block costs nothing: the page, the CSV and the daily deploy all
+keep working off the last good data.
+
+If something does stop, `node scraper/probe.mjs` shows why.
 
 ---
 

@@ -1,0 +1,33 @@
+name: Probe numbeo
+
+# Manual check: does this runner's IP get through to numbeo.com, and how fast?
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Where are we
+        run: curl -s https://api.ipify.org && echo && curl -s https://ipinfo.io/org
+      - name: numbeo probe
+        run: node scraper/probe.mjs
+      - name: Raw status codes
+        run: |
+          for u in \
+            "https://www.numbeo.com/cost-of-living/" \
+            "https://www.numbeo.com/cost-of-living/rankings_current.jsp" \
+            "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Canada" \
+            "https://www.numbeo.com/cost-of-living/in/Toronto?displayCurrency=USD"; do
+            printf '%s -> ' "$u"
+            curl -sS -o /dev/null -D /tmp/h -w "%{http_code} %{time_total}s" -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36" --max-time 30 "$u"
+            grep -i "^retry-after" /tmp/h | tr -d '\r' | sed 's/^/ | /'
+            echo
+          done

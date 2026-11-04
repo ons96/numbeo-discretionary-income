@@ -1,8 +1,17 @@
 /* City discretionary-income ranking. No framework, no build step. */
 
 const PAGE = 60;
+
+// Short names for the "best option" column, where the tab titles are too long.
+const LABELS = {
+  own1brCentre: "1-bed, centre",
+  own1brOutside: "1-bed, outside",
+  room3brCentre: "Room, centre",
+  room3brOutside: "Room, outside",
+};
+
 const state = {
-  scenario: "room3brOutside",
+  scenario: "best",
   currency: "USD",
   q: "",
   country: "",
@@ -139,15 +148,16 @@ function wire() {
 
 /* ---------- derive + render ---------- */
 
-function scenarioFields(r) {
-  const s = D.scenarios.find((x) => x.id === state.scenario) || D.scenarios[0];
-  const rentKey = {
-    own1brCentre: "rent1brCentre",
-    own1brOutside: "rent1brOutside",
-    room3brCentre: "rent3brCentre",
-    room3brOutside: "rent3brOutside",
-  }[state.scenario];
-  const raw = r[rentKey];
+const RENT_KEY = {
+  own1brCentre: "rent1brCentre",
+  own1brOutside: "rent1brOutside",
+  room3brCentre: "rent3brCentre",
+  room3brOutside: "rent3brOutside",
+};
+
+function fieldsFor(r, id) {
+  const s = D.scenarios.find((x) => x.id === id) || D.scenarios[0];
+  const raw = r[RENT_KEY[id]];
   const rent = raw == null ? null : raw / (s.divide || 1);
   const salary = r.salary;
   const expenses = r.expenses;
@@ -162,6 +172,32 @@ function scenarioFields(r) {
   };
 }
 
+/**
+ * The scenario fields for the active tab. "best" picks, per city, whichever of
+ * the four leaves the most money - i.e. the cheapest rent that city offers -
+ * and remembers which one it was so the table can say so.
+ */
+function scenarioFields(r) {
+  if (state.scenario !== "best") return fieldsFor(r, state.scenario);
+
+  let best = null;
+  for (const s of D.scenarios) {
+    const f = fieldsFor(r, s.id);
+    if (f.disc != null && (!best || f.disc > best.disc)) best = { ...f, bestId: s.id };
+  }
+  return (
+    best || {
+      rent: null,
+      salary: r.salary,
+      expenses: r.expenses,
+      disc_m: null,
+      disc: null,
+      share: null,
+      bestId: null,
+    }
+  );
+}
+
 function apply() {
   const out = [];
   for (const r of rows) {
@@ -174,6 +210,11 @@ function apply() {
 
   const key = state.sort;
   out.sort((a, b) => {
+    if (key === "best") {
+      const av = LABELS[a.f.bestId] || "";
+      const bv = LABELS[b.f.bestId] || "";
+      return state.dir * av.localeCompare(bv) || b.f.disc - a.f.disc;
+    }
     const av = key === "city" ? a.r.city : a.f[key];
     const bv = key === "city" ? b.r.city : b.f[key];
     if (key === "city") return state.dir * String(av).localeCompare(String(bv));
@@ -202,6 +243,7 @@ function render() {
   for (const b of document.querySelectorAll(".scenarios button")) {
     b.setAttribute("aria-selected", String(b.dataset.scenario === state.scenario));
   }
+  document.body.classList.toggle("best-mode", state.scenario === "best");
   for (const th of document.querySelectorAll("thead th[data-sort]")) {
     if (th.dataset.sort === state.sort) th.setAttribute("aria-sort", state.dir === -1 ? "descending" : "ascending");
     else th.removeAttribute("aria-sort");
@@ -217,6 +259,7 @@ function render() {
       return `<tr>
         <td class="num rank">${i + 1}</td>
         <td><span class="city">${esc(r.city)}</span><span class="country">${esc(r.country)}</span></td>
+        <td class="only-best">${f.bestId ? LABELS[f.bestId] : "–"}</td>
         <td class="num"><span class="disc${neg ? " neg" : ""}">${f.disc == null ? "–" : money(f.disc)}</span></td>
         <td class="num">${f.disc_m == null ? "–" : `<span class="hint">${money(f.disc_m)}</span>`}</td>
         <td class="num hide-sm">${f.salary == null ? "–" : money(f.salary)}</td>

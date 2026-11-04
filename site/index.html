@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 </head>
-<body>
+<body class="best-mode">
 <header class="bar">
   <div class="bar-top">
     <h1>Where your salary goes furthest</h1>
@@ -19,6 +19,7 @@
   </div>
 
   <div class="scenarios" role="tablist" aria-label="Rent scenario">
+    <button role="tab" data-scenario="best">Best option</button>
     <button role="tab" data-scenario="room3brOutside">Room in 3-bed, outside centre</button>
     <button role="tab" data-scenario="room3brCentre">Room in 3-bed, centre</button>
     <button role="tab" data-scenario="own1brOutside">Own 1-bed, outside centre</button>
@@ -41,6 +42,7 @@
         <tr>
           <th class="num">#</th>
           <th data-sort="city">City</th>
+          <th class="only-best" data-sort="best">Best option</th>
           <th class="num" data-sort="disc">Left over / year</th>
           <th class="num" data-sort="disc_m">Left over / month</th>
           <th class="num hide-sm" data-sort="salary">Net salary / month</th>
@@ -68,6 +70,7 @@
       <li><b>Net salary</b> — Numbeo's “Average Monthly Net Salary (After Tax)” × 12.</li>
       <li><b>Living costs</b> — Numbeo's “estimated monthly costs for a single person, excluding rent” × 12. Where that figure hasn't been collected for a city yet, it is marked <b>≈</b> and estimated from Numbeo's cost-of-living index (the same basket, scaled from New York).</li>
       <li><b>Rent</b> — either a whole 1-bedroom apartment, or a room in a 3-bedroom flat (a third of the 3-bedroom rent), in the city centre or outside it.</li>
+      <li><b>Best option</b> — the tab takes, for each city, whichever of the four leaves the most money, and the column says which one that was. Cheapest rent wins in almost every city, but not where a 1-bed is barely dearer than a room.</li>
       <li><b>Left over</b> — salary − living costs − rent, per year.</li>
     </ul>
     <p class="caveat">

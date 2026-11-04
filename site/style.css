@@ -198,6 +198,10 @@ td.num, th.num { text-align: right; white-space: nowrap; }
 
 .hide-sm { display: none; }
 
+/* the "best option" column only exists in the Best option tab */
+.only-best { display: none; }
+body.best-mode .only-best { display: table-cell; }
+
 @media (min-width: 620px) {
   .hide-sm { display: table-cell; }
   body { font-size: 15px; }

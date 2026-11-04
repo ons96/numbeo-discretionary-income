@@ -159,6 +159,8 @@ async function main() {
     "discretionary_annual_own1br_outside_usd",
     "discretionary_annual_room3br_centre_usd",
     "discretionary_annual_room3br_outside_usd",
+    "best_option",
+    "discretionary_annual_best_usd",
     "data_date",
   ];
   const esc = (v) => {
@@ -173,6 +175,11 @@ async function main() {
       if (rec.salary == null || rec.expenses == null || rec[rentKey] == null) return null;
       return round((rec.salary - rec.expenses - rec[rentKey] / divide) * 12);
     };
+    const options = SCENARIOS.map((sc) => ({ id: sc.id, v: disc(sc.rent, sc.divide || 1) })).filter(
+      (o) => o.v != null
+    );
+    const best = options.sort((a, b) => b.v - a.v)[0] || null;
+
     lines.push(
       [
         rec.city,
@@ -188,6 +195,8 @@ async function main() {
         disc("rent1brOutside"),
         disc("rent3brCentre", 3),
         disc("rent3brOutside", 3),
+        best ? best.id : "",
+        best ? best.v : null,
         rec.dataDate,
       ]
         .map(esc)

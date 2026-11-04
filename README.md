@@ -32,6 +32,11 @@ room in 3-bed, centre  salary*12 - expenses*12 - (rent3brCentre/3)*12
 room in 3-bed, outside salary*12 - expenses*12 - (rent3brOutside/3)*12
 ```
 
+The page opens on **Best option**, which for every city takes whichever of the
+four scenarios leaves the most money and names it in its own column - so the
+ranking answers "how much could you keep here, living as cheaply as this city
+allows" rather than "how much with this exact flat".
+
 A row keeps its city even when a field is missing — the value is just shown as
 `–`, so a city that gains data later appears without any code change.
 

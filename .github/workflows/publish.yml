@@ -1,0 +1,46 @@
+name: Publish
+
+# Builds the site from whatever is committed in data/ and deploys it to Pages.
+# Runs on every push, so new data shows up without touching a workflow.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "site/**"
+      - "scraper/**"
+      - ".github/workflows/publish.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build
+        run: |
+          node scraper/build.mjs
+          echo "--- sanity"
+          node -e "const d=require('./site/data.json'); console.log(d.count, 'cities,', Object.keys(d.fx).length, 'currencies'); if (!d.count) process.exit(1)"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

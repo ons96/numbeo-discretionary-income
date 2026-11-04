@@ -119,3 +119,27 @@ Environment: `CONCURRENCY` (default 2) and `MIN_GAP_MS` (default 900).
 
 Records that fail keep `ok: false` with the HTTP status, so a blocked run is
 visible in the data rather than silently dropping cities.
+
+---
+
+## Wait — why isn't the crawl in the Action?
+
+Because it can't be. numbeo.com answers requests from datacenter IP ranges
+(GitHub's hosted runners are Azure) with **503 Access Forbidden** — with or
+without cookies, any user agent. From a residential connection the same URLs
+return 200. It is an IP-class block, not a rate limit, so no header trick gets
+around it, and GitHub Pages + Actions can therefore only *publish* the data.
+
+Ways to refresh it:
+
+* **Self-hosted runner at home** — set the repo variable `CRAWL_RUNNER` to its
+  label, then run the *Crawl* workflow. Actions orchestrates, the data comes
+  from your own IP.
+* **A small machine or VPS on a non-datacenter IP** — `scripts/vps-crawl.sh`
+  with a cron entry. It crawls a budgeted slice, commits, pushes; the *Publish*
+  workflow rebuilds the site on every push.
+* **From the phone, by asking Buddy** — `node scraper/crawl-cities.mjs
+  --budget=300` then commit and push.
+
+Numbeo's own API exists and would remove all of this: 260 USD/month for up to
+200k queries. That is the price of not crawling.

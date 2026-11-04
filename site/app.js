@@ -220,7 +220,7 @@ function render() {
         <td class="num"><span class="disc${neg ? " neg" : ""}">${f.disc == null ? "–" : money(f.disc)}</span></td>
         <td class="num">${f.disc_m == null ? "–" : `<span class="hint">${money(f.disc_m)}</span>`}</td>
         <td class="num hide-sm">${f.salary == null ? "–" : money(f.salary)}</td>
-        <td class="num hide-sm">${f.expenses == null ? "–" : money(f.expenses)}</td>
+        <td class="num hide-sm">${f.expenses == null ? "–" : `${r.expensesEstimated ? '<span title="estimated from the cost of living index">≈</span> ' : ""}${money(f.expenses)}`}</td>
         <td class="num">${f.rent == null ? "–" : money(f.rent)}</td>
         <td class="num hide-sm">${pct(f.share)}</td>
       </tr>`;

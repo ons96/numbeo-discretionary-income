@@ -22,6 +22,7 @@ const COLUMNS = [
   "restaurantIndex",
   "purchasingPowerIndex",
   "dataDate",
+  "expensesEstimated",
 ];
 
 const SCENARIOS = [
@@ -78,11 +79,25 @@ async function main() {
   if (Object.keys(fx).length <= 1) console.warn("no FX rates - site will only offer USD");
 
   const rows = [];
+  // Living costs come from the city pages, which we crawl slowly. For the rest
+  // we estimate them the way numbeo builds its index: cost of living index /
+  // 100 x the same basket in New York. The anchor is the median of the cities
+  // where we do have real numbers, so estimates tighten as pages arrive.
+  const ratios = [];
+  for (const c of data.cities || []) {
+    const i = bySlug.get(c.slug);
+    if (c.singleExpenses > 0 && i?.coli > 0) ratios.push(c.singleExpenses / (i.coli / 100));
+  }
+  ratios.sort((a, b) => a - b);
+  const anchor = ratios.length ? ratios[Math.floor(ratios.length / 2)] : 1656;
+
   for (const c of data.cities || []) {
     if (!c.ok) continue;
     const idx = bySlug.get(c.slug) || {};
     const salary = c.salary ?? null;
-    const expenses = c.singleExpenses ?? null;
+    const real = c.singleExpenses ?? null;
+    const estimated = real == null && idx.coli > 0;
+    const expenses = real ?? (estimated ? Math.round((idx.coli / 100) * anchor) : null);
     const rent = c.rent || {};
     rows.push([
       c.name || c.city,
@@ -101,6 +116,7 @@ async function main() {
       round(idx.restaurantIndex, 1),
       round(idx.purchasingPowerIndex, 1),
       c.dataDate || null,
+      estimated ? 1 : 0,
     ]);
   }
 

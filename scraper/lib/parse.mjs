@@ -159,3 +159,29 @@ export function splitCityCountry(name) {
   if (i === -1) return { city: name.trim(), country: null };
   return { city: name.slice(0, i).trim(), country: name.slice(i + 1).trim() };
 }
+
+/**
+ * prices_by_city.jsp?itemId=26&itemId=27&itemId=28&itemId=29&itemId=105
+ * returns one table with every city numbeo has a complete dataset for:
+ * rank | city | 1br centre | 1br outside | 3br centre | 3br outside | net salary
+ * (column order follows the itemId order we ask for).
+ */
+export function parseBulkTable(html) {
+  const start = html.indexOf('<table id="t2"');
+  if (start === -1) return [];
+  const end = html.indexOf("</table>", start);
+  const body = html.slice(start, end === -1 ? undefined : end);
+
+  const out = [];
+  for (const m of body.matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
+    const row = m[1];
+    if (!/cost-of-living\/in\//.test(row)) continue;
+    const slug = decodeURIComponent((row.match(/cost-of-living\/in\/([^"]+)"/) || [])[1] || "");
+    const name = decodeEntities((row.match(/">([^<]+)<\/a>/) || [])[1] || "").trim();
+    if (!slug || !name) continue;
+    const values = [...row.matchAll(/text-align:\s*right">([^<]*)</g)].map((v) => toNumber(v[1]));
+    const { city, country } = splitCityCountry(name);
+    out.push({ slug, name, city, country, values });
+  }
+  return out;
+}

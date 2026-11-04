@@ -23,8 +23,8 @@ const SHARD = Number(args.shard || 0);
 const MAX_AGE_DAYS = Number(args["max-age-days"] || 7);
 const LIMIT = args.limit ? Number(args.limit) : Infinity;
 const BUDGET = args.budget ? Number(args.budget) : Infinity;
-const OUT = args.out || (SHARDS > 1 ? `data/shard-${SHARD}.json` : "data/cities.json");
-const REUSE = args.reuse || "data/cities.json";
+const OUT = args.out || (SHARDS > 1 ? `data/shard-${SHARD}.json` : "data/pages.json");
+const REUSE = args.reuse || "data/pages.json";
 const ONLY_COUNTRIES = args.countries ? args.countries.split(",").map((s) => s.trim()).filter(Boolean) : null;
 const NICE = "NumbeoDiscretionaryIncome/1.0 (+https://github.com/ons96/numbeo-discretionary-income)";
 

@@ -47,36 +47,45 @@ A row keeps its city even when a field is missing — the value is just shown as
 
 ## How it runs
 
+The expensive-looking part turned out to be cheap: `prices_by_city.jsp` takes
+several `itemId` parameters and returns **one table with every city** that has a
+complete dataset — salary and the four rents side by side. So the whole core
+dataset is a single request, and the site is two:
+
 ```
-scraper/crawl-lists.mjs   235 country pages -> every city in every dropdown
-                          + the current index rankings (1 page)
-scraper/crawl-cities.mjs  one page per city, sharded, budgeted, resumable
-scraper/merge.mjs         shard files + previous data -> data/cities.json
+scraper/crawl-bulk.mjs     1 request -> data/bulk.json    (salary + 4 rents, ~570 cities)
+scraper/crawl-indices.mjs  1 request -> data/indices.json (cost of living / rent / pp indices)
+scraper/crawl-lists.mjs   235 requests -> the full country/city list (monthly, optional)
+scraper/crawl-cities.mjs  optional: one page per city, for real living-cost figures
+scraper/merge.mjs         joins them -> data/cities.json
 scraper/build.mjs         + FX -> site/data.json and site/data.csv
 site/                     static page, no build step
 ```
 
-`.github/workflows/scrape.yml` runs daily:
+Two workflows:
 
-1. `lists` — refreshes the country/city list if it is older than 30 days.
-2. `crawl` — 4 shards in parallel, each fetching at most `budget` cities
-   (default 400), oldest data first, skipping anything younger than
-   `max_age_days` (default 7).
-3. `publish` — merges, computes, commits `data/` and `site/data.json|.csv`,
-   deploys `site/` to Pages.
+* **Crawl** (manual) fetches the data and commits it. It needs a residential IP:
+  numbeo answers datacenter ranges with `503 Access Forbidden`, so GitHub's
+  hosted runners cannot do it. Set the repo variable `CRAWL_RUNNER` to a
+  self-hosted runner's label, or run `scripts/vps-crawl.sh` from a home machine.
+* **Publish** (on every push) rebuilds and deploys the page.
+
+### Living costs
+
+The bulk table has no "single person living costs" column, so those get crawled
+per city when you have the patience (`crawl-cities.mjs --budget=200`). Every
+other city shows **≈** and uses an estimate: cost-of-living index / 100 × the
+New York basket, with the anchor taken from the median of the cities that do
+have real figures. The estimates get better as pages arrive.
 
 ### Being a good citizen (and not getting banned)
 
-Numbeo answers a burst of requests with `429` plus a `Retry-After` a month out,
-and it is per IP. So:
+* two requests per refresh, one at a time, ~1.5 s apart;
+* the per-city pass is budgeted and resumable, nothing is fetched twice;
+* a run stops itself the moment numbeo answers with a far-future `Retry-After`
+  instead of retrying into a longer ban.
 
-* one request at a time per shard, ~1 s apart (`CONCURRENCY`, `MIN_GAP_MS`);
-* a per-run budget, so a daily run refreshes a slice rather than the whole world;
-* a shard stops itself after 12 consecutive failures instead of hammering;
-* data is cached in `data/cities.json`, so nothing is fetched twice.
-
-If every shard comes back blocked, run `node scraper/probe.mjs` to confirm, then
-wait out the `Retry-After` — retrying sooner only extends the ban.
+If it does stop, `node scraper/probe.mjs` shows why.
 
 ---
 

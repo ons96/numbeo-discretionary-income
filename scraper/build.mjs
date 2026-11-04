@@ -2,7 +2,8 @@
 //
 //   node scraper/build.mjs
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir, copyFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { get } from "./lib/http.mjs";
 
 const COLUMNS = [
@@ -205,6 +206,30 @@ async function main() {
   }
   await writeFile("site/data.csv", lines.join("\n") + "\n");
   console.log(`site/data.csv: ${lines.length - 1} rows`);
+
+  await writeDist();
+}
+
+/**
+ * The deployable folder. Scripts and styles get their content hash in the file
+ * name, so a browser can cache them forever and can never end up running a new
+ * page with an old app.js (which is exactly how a tab once rendered empty).
+ */
+async function writeDist() {
+  const hash = async (path) => createHash("sha1").update(await readFile(path)).digest("hex").slice(0, 10);
+  const [js, css] = [await hash("site/app.js"), await hash("site/style.css")];
+
+  await mkdir("dist", { recursive: true });
+  await copyFile("site/app.js", `dist/app.${js}.js`);
+  await copyFile("site/style.css", `dist/style.${css}.css`);
+  await copyFile("site/data.json", "dist/data.json");
+  await copyFile("site/data.csv", "dist/data.csv");
+
+  const html = (await readFile("site/index.html", "utf8"))
+    .replace('href="style.css"', `href="style.${css}.css"`)
+    .replace('src="app.js"', `src="app.${js}.js"`);
+  await writeFile("dist/index.html", html);
+  console.log(`dist/: app.${js}.js, style.${css}.css`);
 }
 
 main().catch((e) => {

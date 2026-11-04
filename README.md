@@ -64,7 +64,8 @@ scraper/crawl-lists.mjs   235 requests -> the full country/city list (monthly, o
 scraper/crawl-cities.mjs  optional: one page per city, for real living-cost figures
 scraper/merge.mjs         joins them -> data/cities.json
 scraper/build.mjs         + FX -> site/data.json and site/data.csv
-site/                     static page, no build step
+site/                     static page source, no framework
+scraper/build.mjs         also writes dist/ with content-hashed css/js (cache-safe deploys)
 ```
 
 Two workflows:

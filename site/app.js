@@ -16,6 +16,7 @@ const state = {
   q: "",
   country: "",
   completeOnly: true,
+  baseline: null,
   sort: "disc",
   dir: -1,
   shown: PAGE,
@@ -24,6 +25,8 @@ const state = {
 let D = null; // data.json
 let rows = []; // derived rows
 let filtered = [];
+let baseline = { row: null, f: null, threshold: null };
+let qualifying = [];
 let col = {};
 
 const $ = (s) => document.querySelector(s);
@@ -73,6 +76,7 @@ async function load() {
 
   buildCurrency();
   buildCountries();
+  buildBaselineList();
   wire();
   render();
 }
@@ -130,6 +134,14 @@ function wire() {
     state.shown = PAGE;
     render();
   };
+  const base = $("#baseline");
+  base.oninput = () => setBaseline(base.value);
+  base.onchange = () => setBaseline(base.value);
+  $("#baseline-clear").onclick = () => {
+    base.value = "";
+    setBaseline("");
+  };
+
   $("#loadmore").onclick = () => {
     state.shown += PAGE * 2;
     render();
@@ -144,6 +156,22 @@ function wire() {
       render();
     };
   }
+}
+
+/* ---------- baseline ---------- */
+
+function buildBaselineList() {
+  const names = rows.map((r) => r.city).sort((a, b) => a.localeCompare(b));
+  $("#baseline-list").innerHTML = names.map((n) => `<option value="${esc(n)}"></option>`).join("");
+}
+
+/** Set (or clear) the city every other city has to match on left-over money. */
+function setBaseline(text) {
+  const q = String(text || "").trim().toLowerCase();
+  const hit = q ? rows.find((r) => r.city.toLowerCase() === q) : null;
+  state.baseline = hit ? hit.slug : null;
+  state.shown = PAGE;
+  render();
 }
 
 /* ---------- derive + render ---------- */
@@ -199,14 +227,25 @@ function scenarioFields(r) {
 }
 
 function apply() {
-  const out = [];
+  const baseRow = state.baseline ? rows.find((r) => r.slug === state.baseline) : null;
+  const baseF = baseRow ? scenarioFields(baseRow) : null;
+  const threshold = baseF && baseF.disc != null ? baseF.disc : null;
+  baseline = { row: baseRow, f: baseF, threshold };
+
+  // everyone who leaves at least as much as the baseline city, before the
+  // country filter - the country chips stay complete so you can switch between
+  // them without losing the list.
+  const qualified = [];
   for (const r of rows) {
-    if (state.country && r.country !== state.country) continue;
     if (state.q && !r._search.includes(state.q)) continue;
     const f = scenarioFields(r);
     if (state.completeOnly && f.disc == null) continue;
-    out.push({ r, f });
+    if (threshold != null && (f.disc == null || f.disc < threshold - 0.005)) continue;
+    qualified.push({ r, f });
   }
+  qualifying = qualified;
+
+  const out = state.country ? qualified.filter((x) => x.r.country === state.country) : qualified.slice();
 
   const key = state.sort;
   out.sort((a, b) => {
@@ -224,6 +263,56 @@ function apply() {
     return state.dir * (av - bv);
   });
   filtered = out;
+}
+
+function renderBaseline() {
+  const panel = $("#baseline-panel");
+  const clear = $("#baseline-clear");
+  const { row, threshold } = baseline;
+
+  clear.hidden = !state.baseline;
+  if (!state.baseline) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+    return;
+  }
+  panel.hidden = false;
+
+  if (!row) {
+    panel.innerHTML = "<p>That city is no longer in the dataset.</p>";
+    return;
+  }
+  if (threshold == null) {
+    panel.innerHTML = `<p><b>${esc(row.city)}</b> has no salary or rent for this rent option, so it cannot be a baseline. Pick another city or another tab.</p>`;
+    return;
+  }
+
+  const countries = new Map();
+  for (const { r } of qualifying) countries.set(r.country, (countries.get(r.country) || 0) + 1);
+  const names = [...countries.keys()].sort((a, b) => a.localeCompare(b));
+
+  panel.innerHTML =
+    `<p>At least as much left over as <b>${esc(row.city)}</b> — <b>${money(threshold)}</b>/yr · ` +
+    `<b>${qualifying.length.toLocaleString()}</b> ${qualifying.length === 1 ? "city" : "cities"} in ` +
+    `<b>${names.length}</b> ${names.length === 1 ? "country" : "countries"}</p>` +
+    `<div class="chips">` +
+    names
+      .map(
+        (c) =>
+          `<button type="button" data-chip="${esc(c)}" aria-pressed="${state.country === c}">${esc(c)} (${countries.get(c)})</button>`
+      )
+      .join("") +
+    `</div>`;
+
+  for (const b of panel.querySelectorAll("[data-chip]")) {
+    b.onclick = () => {
+      const c = b.dataset.chip;
+      state.country = state.country === c ? "" : c;
+      $("#country").value = state.country;
+      state.shown = PAGE;
+      render();
+    };
+  }
 }
 
 function summary() {
@@ -250,6 +339,7 @@ function render() {
   }
 
   $("#summary").innerHTML = summary();
+  renderBaseline();
   $("#updated").textContent = `updated ${new Date(D.generatedAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`;
 
   const shown = filtered.slice(0, state.shown);

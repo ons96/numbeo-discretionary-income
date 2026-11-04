@@ -31,10 +31,17 @@
     <select id="country" aria-label="Country"><option value="">All countries</option></select>
     <label class="toggle"><input id="complete" type="checkbox" checked> Complete data only</label>
   </div>
+
+  <div class="filters baseline-row">
+    <input id="baseline" list="baseline-list" placeholder="At least as much left over as… (pick a city)" autocomplete="off" spellcheck="false" aria-label="Baseline city">
+    <datalist id="baseline-list"></datalist>
+    <button type="button" id="baseline-clear" hidden>Clear baseline</button>
+  </div>
 </header>
 
 <main>
   <section id="summary" class="summary"></section>
+  <section id="baseline-panel" class="baseline-panel" hidden></section>
 
   <div class="tablewrap">
     <table id="table">
@@ -70,6 +77,7 @@
       <li><b>Net salary</b> — Numbeo's “Average Monthly Net Salary (After Tax)” × 12.</li>
       <li><b>Living costs</b> — Numbeo's “estimated monthly costs for a single person, excluding rent” × 12. Where that figure hasn't been collected for a city yet, it is marked <b>≈</b> and estimated from Numbeo's cost-of-living index (the same basket, scaled from New York).</li>
       <li><b>Rent</b> — either a whole 1-bedroom apartment, or a room in a 3-bedroom flat (a third of the 3-bedroom rent), in the city centre or outside it.</li>
+      <li><b>Baseline</b> — pick any city and the table keeps only the cities that leave at least as much money over as it does, in the selected rent scenario; the chips below are the countries that still have at least one such city.</li>
       <li><b>Best option</b> — the tab takes, for each city, whichever of the four leaves the most money, and the column says which one that was. Cheapest rent wins in almost every city, but not where a 1-bed is barely dearer than a room.</li>
       <li><b>Left over</b> — salary − living costs − rent, per year.</li>
     </ul>

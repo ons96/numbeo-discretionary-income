@@ -37,6 +37,12 @@ four scenarios leaves the most money and names it in its own column - so the
 ranking answers "how much could you keep here, living as cheaply as this city
 allows" rather than "how much with this exact flat".
 
+The **baseline** box takes any city and keeps only the cities that leave at least
+as much money over as it does (in the tab's rent scenario), then lists the
+countries that still have a city in that set, with counts. Picking one of those
+countries narrows the table to it; the chips stay complete so you can hop
+between them.
+
 A row keeps its city even when a field is missing — the value is just shown as
 `–`, so a city that gains data later appears without any code change.
 

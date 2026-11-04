@@ -12,6 +12,9 @@ name: Crawl
 # The optional per-city pass adds the "single person living costs" figure.
 
 on:
+  schedule:
+    # daily; only actually runs when CRAWL_RUNNER is set (see the job condition)
+    - cron: "37 5 * * *"
   workflow_dispatch:
     inputs:
       page_budget:
@@ -34,6 +37,9 @@ env:
 
 jobs:
   crawl:
+    # a scheduled run is pointless on a hosted runner (numbeo blocks it), so it
+    # only fires once a residential runner has been registered
+    if: github.event_name != 'schedule' || vars.CRAWL_RUNNER != ''
     runs-on: ${{ vars.CRAWL_RUNNER || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v4

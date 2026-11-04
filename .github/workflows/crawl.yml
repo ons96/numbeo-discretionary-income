@@ -27,6 +27,9 @@ on:
 
 permissions:
   contents: write
+  # needed to kick the Publish workflow: a commit made with GITHUB_TOKEN does
+  # not trigger other workflows on its own
+  actions: write
 
 concurrency:
   group: crawl
@@ -75,3 +78,8 @@ jobs:
           git add data/
           git diff --quiet --cached || git commit -m "data: crawl $(date -u +%Y-%m-%d)"
           git push
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml --ref main

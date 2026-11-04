@@ -133,8 +133,14 @@ async function main() {
           scrapedAt: new Date().toISOString(),
         };
         log(`  ! ${p.country} / ${p.city}: ${rec.error}`);
-        if (streak >= 12) {
-          console.log("::warning::12 consecutive failures - looks like we are rate limited or blocked; stopping this shard early");
+        if (res.blocked) {
+          console.log("::warning::numbeo is rate limiting this runner - stopping this shard");
+          blocked = true;
+          queue.length = 0;
+          return;
+        }
+        if (streak >= 6) {
+          console.log("::warning::6 consecutive failures - looks like we are blocked; stopping this shard early");
           blocked = true;
           queue.length = 0;
           return;

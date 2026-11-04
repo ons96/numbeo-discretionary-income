@@ -60,6 +60,20 @@ export async function get(url, { retries = 3, timeout = 45000, accept = "text/ht
         })
       );
       const status = res.status;
+      if (status === 429 || status === 403) {
+        const ra = Number(res.headers.get("retry-after"));
+        // Numbeo answers a burst with a Retry-After weeks out; retrying then is
+        // pointless and only makes the block longer.
+        if (Number.isFinite(ra) && ra > 3600) {
+          return { ok: false, status, url, body: "", blocked: true, error: `rate limited, retry after ${ra}s` };
+        }
+        if (res.headers.get("retry-after") && !Number.isFinite(ra)) {
+          const when = Date.parse(res.headers.get("retry-after"));
+          if (Number.isFinite(when) && when - Date.now() > 3600_000) {
+            return { ok: false, status, url, body: "", blocked: true, error: "rate limited (far-future Retry-After)" };
+          }
+        }
+      }
       if (status === 429 || status === 503 || status >= 500) {
         const ra = Number(res.headers.get("retry-after"));
         if (Number.isFinite(ra) && ra > 0) await sleep(Math.min(ra * 1000, 60000));

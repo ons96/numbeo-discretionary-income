@@ -328,6 +328,33 @@ function renderBaseline() {
   }
 }
 
+// Explain the difference between missing data and cities hidden by a baseline.
+function renderBaselineNotice() {
+  const panel = $("#baseline-notice");
+  panel.hidden = true;
+  panel.innerHTML = "";
+  if (baseline.threshold == null) return;
+
+  const matching = rows.filter((r) =>
+    (!state.country || r.country === state.country) &&
+    (!state.q || r._search.includes(state.q))
+  );
+  const hidden = matching.filter((r) => {
+    const f = scenarioFields(r);
+    return f.disc != null && f.disc < baseline.threshold - 0.005;
+  });
+  if (!hidden.length) return;
+
+  panel.hidden = false;
+  const location = state.country ? ` in ${esc(state.country)}` : "";
+  panel.innerHTML = `<p><b>${hidden.length}</b> cities${location} have data but are hidden because they leave less over than <b>${esc(baseline.row.city)}</b>.</p>` +
+    `<button type="button" id="show-below-baseline">Show all cities${location} (clear baseline)</button>`;
+  $("#show-below-baseline").onclick = () => {
+    $("#baseline").value = "";
+    setBaseline("");
+  };
+}
+
 function summary() {
   const vals = filtered.map((x) => x.f.disc).filter((v) => v != null).sort((a, b) => a - b);
   if (!vals.length) return "";
@@ -353,6 +380,7 @@ function render() {
 
   $("#summary").innerHTML = summary();
   renderBaseline();
+  renderBaselineNotice();
   $("#updated").textContent = `updated ${new Date(D.generatedAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`;
 
   const shown = filtered.slice(0, state.shown);

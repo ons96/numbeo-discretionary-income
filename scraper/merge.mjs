@@ -86,7 +86,11 @@ async function main() {
       rec.country = p.country;
     }
     if (p.ok === false) {
-      rec.ok = false;
+      // A blocked or rate-limited page must not remove a city that we already
+      // have salary/rent for - the estimate is worse than real data, but far
+      // better than dropping the row from the site.
+      if (rec.salary == null && rec.rent.oneBedCentre == null) rec.ok = false;
+      else rec.pageMissing = p.error || true;
       continue;
     }
     // a city page carries the living-cost estimate, and is the fresher source

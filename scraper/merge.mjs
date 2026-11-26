@@ -20,6 +20,10 @@ async function main() {
   const bulk = await readJson("data/bulk.json", { cities: [] });
   const minwage = await readJson("data/minwage.json", { countries: [] });
   const minWageByCountry = new Map((minwage.countries || []).map((r) => [r.country, r]));
+  const quality = await readJson("data/quality.json", { cities: [] });
+  const crime = await readJson("data/crime.json", { cities: [] });
+  const qualityByName = new Map((quality.cities || []).map((r) => [r.name.toLowerCase(), r]));
+  const crimeByName = new Map((crime.cities || []).map((r) => [r.name.toLowerCase(), r]));
   const pages = await readJson("data/pages.json", { cities: [] });
   const lists = await readJson("data/lists.json", { countries: [] });
 
@@ -35,6 +39,9 @@ async function main() {
     singleExpenses: null,
     family4Expenses: null,
     minWage: null,
+    qualityOfLifeIndex: null,
+    safetyIndex: null,
+    crimeIndex: null,
     ok: true,
     dataDate: null,
     scrapedAt: null,
@@ -106,6 +113,12 @@ async function main() {
 
   for (const rec of bySlug.values()) {
     if (rec.country && minWageByCountry.has(rec.country)) rec.minWage = minWageByCountry.get(rec.country);
+    const key = rec.city && rec.country ? `${rec.city}, ${rec.country}`.toLowerCase() : null;
+    const q = key ? qualityByName.get(key) : null;
+    const c = key ? crimeByName.get(key) : null;
+    rec.qualityOfLifeIndex = q ? q.qualityOfLifeIndex : null;
+    rec.safetyIndex = c ? c.safetyIndex : q ? q.safetyIndex : null;
+    rec.crimeIndex = c ? c.crimeIndex : null;
   }
 
   const cities = [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));

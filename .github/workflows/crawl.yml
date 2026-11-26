@@ -74,6 +74,9 @@ jobs:
       - name: Minimum wage by country
         run: node scraper/crawl-minwage.mjs
 
+      - name: Quality of life and crime indices
+        run: node scraper/crawl-safety.mjs
+
       - name: Merge
         run: |
           node scraper/merge.mjs

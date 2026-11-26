@@ -63,6 +63,14 @@ const norm = (s) =>
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
 
+/* ---------- sticky table header ---------- */
+
+// Keep the sticky <thead> below the sticky page header by publishing its height.
+function syncStickyHeader() {
+  const bar = document.querySelector(".bar");
+  if (bar) document.documentElement.style.setProperty("--bar-h", `${bar.offsetHeight}px`);
+}
+
 /* ---------- data ---------- */
 
 async function load() {
@@ -84,6 +92,9 @@ async function load() {
   applyDefaultBaseline();
   wire();
   render();
+  syncStickyHeader();
+  window.addEventListener("resize", syncStickyHeader);
+  if ("ResizeObserver" in window) new ResizeObserver(syncStickyHeader).observe(document.querySelector(".bar"));
 }
 
 function buildCurrency() {

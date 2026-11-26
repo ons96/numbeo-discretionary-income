@@ -181,7 +181,10 @@ select, input, button {
 
 /* ---------- table ---------- */
 
-.tablewrap { overflow-x: auto; }
+/* No overflow here: an overflow container would become the sticky scrollport
+   and break the sticky <thead> on page scroll. The table is allowed to overflow
+   the page horizontally on narrow screens instead. */
+.tablewrap { overflow: visible; }
 
 table {
   width: 100%;
@@ -191,20 +194,28 @@ table {
 
 thead th {
   position: sticky;
-  top: 0;
+  top: var(--bar-h, 0px);
+  z-index: 6;
   background: var(--bg);
   font-size: 10.5px;
+  line-height: 1.3;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
   font-weight: 600;
   text-align: left;
+  vertical-align: bottom;
   padding: 8px 8px;
   border-bottom: 1px solid var(--line);
-  white-space: nowrap;
+  box-shadow: inset 0 -1px 0 var(--line);
+  white-space: normal;
+  overflow-wrap: break-word;
   cursor: pointer;
   user-select: none;
 }
+
+/* numeric headers wrap too, so the longest label sets the column width */
+thead th.num { text-align: right; white-space: normal; }
 
 thead th[aria-sort="descending"]::after { content: " ▾"; }
 thead th[aria-sort="ascending"]::after { content: " ▴"; }
@@ -217,7 +228,7 @@ tbody td {
 
 tbody tr:nth-child(even) { background: var(--row); }
 
-td.num, th.num { text-align: right; white-space: nowrap; }
+td.num { text-align: right; white-space: nowrap; }
 
 .rank { color: var(--muted); font-size: 11px; }
 

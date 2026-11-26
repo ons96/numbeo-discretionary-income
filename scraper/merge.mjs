@@ -127,21 +127,25 @@ async function main() {
     const block = rec.country ? subnat.countries?.[rec.country] : null;
     if (!block) return null;
     const city = rec.city || "";
-    const make = (value, scope) =>
+    // period is per country: US/CA/CH publish hourly rates, India and China
+    // publish monthly ones. Treating a monthly figure as hourly would multiply
+    // it by 173 and put an absurd wage on the page.
+    const period = block.period || "hour";
+    const make = (value, scope, region) =>
       value == null ? null : {
-        value, currency: block.currency, period: "hour",
+        value, currency: block.currency, period,
         effectivePeriod: block.effective, source: block.source, scope,
+        region: region || null,
       };
-    if (block.cityRates?.[city] != null) return make(block.cityRates[city], "city");
-    if (block.cities?.[city] != null) return make(block.cities[city], "city");
+    if (block.cityRates?.[city] != null) return make(block.cityRates[city], "city", city);
+    if (block.cities?.[city] != null) return make(block.cities[city], "city", city);
     const region = block.cityRegion?.[city] || (city.match(/,\s*([A-Z]{2})$/) || [])[1];
     if (region && block.regions?.[region] != null) {
-      const scope = rec.country === "United States" ? "state" : rec.country === "Canada" ? "province" : "canton";
-      return make(block.regions[region], scope);
+      const scope = block.regionScope || "state";
+      return make(block.regions[region], scope, block.regionNames?.[region] || region);
     }
     if (block.default != null) {
-      const scope = rec.country === "United States" ? "state" : "country";
-      return make(block.default, scope);
+      return make(block.default, "country", rec.country);
     }
     return null;
   }

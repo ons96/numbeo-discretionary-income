@@ -90,7 +90,61 @@ if (site.columns?.length && siteFresh) {
   console.log("check-minwage: site/data.json is older than data/cities.json, site check skipped");
 }
 
-// 5. Report, so a big drop is visible even when nothing fails.
+// 5. The subnational file is hand-maintained, so it rots silently. Validate its
+//    shape, catch a mapping that points at a region nobody defined, and treat a
+//    rate that has not been re-effective for two years as an error.
+const subnat = await readJson("data/minwage-subnational.json", { countries: {} });
+const thisYear = new Date().getUTCFullYear();
+const warnings = [];
+for (const [country, block] of Object.entries(subnat.countries || {})) {
+  const where = `minwage-subnational[${country}]`;
+  for (const key of ["currency", "effective", "source", "sourceUrl"]) {
+    if (!block[key]) fail(`${where}: missing ${key}`);
+  }
+  const period = block.period || "hour";
+  if (!["hour", "day", "month"].includes(period)) fail(`${where}: period "${period}" is not hour|day|month`);
+
+  const regions = block.regions || {};
+  const cities = { ...(block.cities || {}), ...(block.cityRates || {}) };
+  for (const [city, region] of Object.entries(block.cityRegion || {})) {
+    if (regions[region] == null) fail(`${where}: city "${city}" maps to region "${region}" that has no rate`);
+  }
+  for (const [city, value] of Object.entries(cities)) {
+    if (typeof value !== "number" || !Number.isFinite(value) || value <= 0) fail(`${where}: city "${city}" has a non-positive rate`);
+  }
+  for (const [region, value] of Object.entries(regions)) {
+    if (typeof value !== "number" || !Number.isFinite(value) || value <= 0) fail(`${where}: region "${region}" has a non-positive rate`);
+  }
+
+  const year = Number(String(block.effective).slice(0, 4));
+  if (Number.isFinite(year)) {
+    if (year <= thisYear - 2) fail(`${where}: rates effective ${block.effective} are at least two years stale - re-check ${block.sourceUrl || "the source"}`);
+    else if (year < thisYear) warnings.push(`${where}: rates effective ${block.effective}, not ${thisYear}`);
+  } else {
+    fail(`${where}: effective "${block.effective}" is not a year`);
+  }
+
+  // A country with regions but no city mapping silently falls back to nothing.
+  const mapped = Object.keys(block.cityRegion || {}).length + Object.keys(block.cityRates || {}).length;
+  if (Object.keys(regions).length && mapped === 0 && block.default == null) {
+    fail(`${where}: has regional rates but no city maps to them`);
+  }
+}
+
+// Every dataset city in a covered country should resolve to a rate. A miss means
+// a new Numbeo city appeared and the mapping was never extended.
+const subCities = new Map();
+for (const c of cities.cities || []) {
+  if (subnat.countries?.[c.country]) subCities.set(`${c.country}|${c.city}`, !!c.minWage);
+}
+const unresolved = [...subCities.entries()].filter(([, has]) => !has).map(([k]) => k);
+// Not every miss is a bug: some cantons genuinely set no minimum wage. Report the
+// count so a mapping that stops matching is visible, without failing the run.
+if (unresolved.length) {
+  console.log(`check-minwage: ${unresolved.length} cities in covered countries have no statutory rate (expected for e.g. Swiss cantons without one)`);
+}
+
+// 6. Report, so a big drop is visible even when nothing fails.
 const scopes = {};
 for (const c of cities.cities || []) {
   const s = c.minWage ? c.minWage.scope || "country" : "none";
@@ -101,6 +155,8 @@ console.log(
   `minwage: ${counts.national} national, ${counts.aggregate} aggregate, ${counts.none} none` +
     ` | cities by scope: ${Object.entries(scopes).map(([k, v]) => `${k}=${v}`).join(" ")}`
 );
+
+for (const w of warnings) console.warn(`  ~ ${w}`);
 
 if (problems.length) {
   for (const p of problems.slice(0, 25)) console.error(`  ! ${p}`);

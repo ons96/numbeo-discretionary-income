@@ -392,15 +392,18 @@ function summary() {
 // Where the statutory rate comes from: a country rate is not this city's rate
 // when a state, province, canton or city sets its own higher one.
 const SCOPE_NOTE = {
-  country: ["†", "country-level statutory rate, not a city rate"],
-  state: ["§", "US state minimum wage"],
-  province: ["§", "Canadian provincial minimum wage"],
-  canton: ["§", "Swiss cantonal minimum wage"],
-  city: ["§", "city-level minimum wage"],
+  country: ["†", "national statutory rate, not a city rate"],
+  state: ["§", "state minimum wage"],
+  province: ["§", "provincial minimum wage"],
+  canton: ["§", "cantonal minimum wage"],
+  city: ["§", "city minimum wage"],
 };
 
+// Name the jurisdiction the rate comes from: Toronto is a city in Ontario, and
+// the rate shown is Ontario's provincial one, not a "Toronto province".
 function mwNote(r) {
-  const [mark, title] = SCOPE_NOTE[r.minWageScope] || SCOPE_NOTE.country;
+  const [mark, base] = SCOPE_NOTE[r.minWageScope] || SCOPE_NOTE.country;
+  const title = r.minWageRegion && r.minWageScope !== "country" ? `${r.minWageRegion} ${base}` : base;
   return `<span class="est" title="${esc(title)}">${mark}</span>`;
 }
 

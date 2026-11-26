@@ -35,6 +35,13 @@ jobs:
           node scraper/build.mjs
           echo "--- sanity"
           node -e "const d=require('./site/data.json'); console.log(d.count, 'cities,', Object.keys(d.fx).length, 'currencies'); if (!d.count) process.exit(1)"
+
+      - name: Check minimum-wage provenance
+        # Last line of defence before deploy: the crawl job guards cities.json,
+        # this guards the payload the page actually loads. A wage that came from
+        # an ILO aggregate, or a Swiss city with no statutory rate behind it,
+        # must never reach the live site.
+        run: node scraper/check-minwage.mjs
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

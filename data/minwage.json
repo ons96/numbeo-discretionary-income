@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T15:46:20.726Z",
+  "generatedAt": "2026-11-26T21:57:50.795Z",
   "count": 121,
   "countries": [
     {
@@ -10,6 +10,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Albania, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -20,6 +22,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Argentina, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -30,6 +34,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Armenia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -40,6 +46,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Australia, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -48,6 +56,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -58,6 +68,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Azerbaijan, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -68,6 +80,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Bahrain, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -78,6 +92,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Bangladesh, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -88,6 +104,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Belarus, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -98,6 +116,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Belgium, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -108,6 +128,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Bolivia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -118,6 +140,8 @@
       "effectivePeriod": null,
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": null,
+      "measure": null,
+      "basis": "none",
       "error": "no value"
     },
     {
@@ -128,6 +152,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Botswana, statutory minimum wage per month (sectoral) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -138,6 +164,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Brazil, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -148,6 +176,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Bulgaria, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -158,6 +188,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Cambodia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -168,6 +200,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Canada, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -176,6 +210,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -186,6 +222,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Chile, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -196,6 +234,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "China, statutory minimum wage per month (regional) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -206,6 +246,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Colombia, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -216,6 +258,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Costa Rica, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -226,6 +270,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Croatia, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -236,6 +282,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Cyprus, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -244,6 +292,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -252,6 +302,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -262,6 +314,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Dominican Republic, statutory minimum wage per month (average of minimum wages based on establishment size) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -272,6 +326,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Ecuador, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -282,6 +338,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Egypt, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -292,6 +350,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "El Salvador, statutory minimum wage per month (sectoral (manufacturing)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -302,6 +362,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Estonia, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -310,6 +372,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -320,6 +384,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "France, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -330,6 +396,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Georgia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -340,6 +408,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Germany, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -350,6 +420,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Ghana, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -360,6 +432,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Greece, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -370,6 +444,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Guatemala, statutory minimum wage per month (sectoral (manufacturing)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -380,6 +456,8 @@
       "effectivePeriod": null,
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": null,
+      "measure": null,
+      "basis": "none",
       "error": "no value"
     },
     {
@@ -390,6 +468,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Hungary, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -400,6 +480,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Iceland, statutory minimum wage per month (sectoral) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -410,6 +492,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "India, statutory minimum wage per month (national floor) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -420,6 +504,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Indonesia, statutory minimum wage per month (regional) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -430,6 +516,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Iran, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -440,6 +528,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Iraq, statutory minimum wage per month (occupational (unskilled workers)) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -450,6 +540,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Ireland, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -460,6 +552,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Israel, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -468,6 +562,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -476,6 +572,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -486,6 +584,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Jamaica, statutory minimum wage per month (national floor) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -496,6 +596,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Japan, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -504,6 +606,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -514,6 +618,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Jordan, statutory minimum wage per month (national floor) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -524,6 +630,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Kazakhstan, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -534,6 +642,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Kenya, statutory minimum wage per month (occupational) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -542,6 +652,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -552,6 +664,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Kuwait, statutory minimum wage per month (sectoral (private and oil sectors)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -562,6 +676,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Kyrgyzstan, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -572,6 +688,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Latvia, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -582,6 +700,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Lebanon, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -592,6 +712,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Lithuania, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -602,6 +724,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Luxembourg, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -612,6 +736,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Malaysia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -620,6 +746,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -630,6 +758,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Malta, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -640,6 +770,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Mauritius, statutory minimum wage per month (occupational (unskilled workers)) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -650,6 +782,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Mexico, statutory minimum wage per day (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -660,6 +794,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Moldova, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -670,6 +806,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Mongolia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -680,6 +818,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Montenegro, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -690,6 +830,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Morocco, statutory minimum wage per month (rate of the smig when smig/smag system) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -700,6 +842,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Mozambique, statutory minimum wage per month (sectoral (manufacturing)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -708,6 +852,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -718,6 +864,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Nepal, statutory minimum wage per month (national floor) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -728,6 +876,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Netherlands, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -738,6 +888,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "New Zealand, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -748,6 +900,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Nigeria, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -758,6 +912,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "North Macedonia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -766,6 +922,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -776,6 +934,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Oman, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -786,6 +946,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Pakistan, statutory minimum wage per month (occupational (unskilled workers)) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -796,6 +958,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Panama, statutory minimum wage per month (sectoral (manufacturing)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -806,6 +970,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Paraguay, statutory minimum wage per month (national floor for adults) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -816,6 +982,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Peru, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -826,6 +994,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Philippines, statutory minimum wage per month (regional (lowest provincial rate in non-agriculture)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -836,6 +1006,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Poland, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -846,6 +1018,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Portugal, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -854,6 +1028,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -864,6 +1040,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Qatar, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -874,6 +1052,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Romania, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -884,6 +1064,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Russia, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -894,6 +1076,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Rwanda, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -904,6 +1088,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Saudi Arabia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -914,6 +1100,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Serbia, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -922,6 +1110,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -932,6 +1122,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Slovakia, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -942,6 +1134,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Slovenia, statutory minimum wage per month (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -952,6 +1146,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "South Africa, statutory minimum wage per month (occupational) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -962,6 +1158,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "South Korea, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -972,6 +1170,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Spain, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -982,6 +1182,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Sri Lanka, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -990,6 +1192,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -1000,6 +1204,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Switzerland, statutory minimum wage per month (regional) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -1008,6 +1214,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -1018,6 +1226,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Tajikistan, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1028,6 +1238,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Tanzania, statutory minimum wage per month (sectoral (manufacturing)) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -1038,6 +1250,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Thailand, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1048,6 +1262,8 @@
       "effectivePeriod": null,
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": null,
+      "measure": null,
+      "basis": "none",
       "error": "no value"
     },
     {
@@ -1058,6 +1274,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Tunisia, statutory minimum wage per month (rate of the smig when smig/smag system) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1066,6 +1284,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -1076,6 +1296,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Uganda, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1086,6 +1308,8 @@
       "effectivePeriod": "2026",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Ukraine, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1094,6 +1318,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     },
     {
@@ -1104,6 +1330,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "United Kingdom, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1114,6 +1342,8 @@
       "effectivePeriod": "2025",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "United States, statutory minimum wage per hour (OECD)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1124,6 +1354,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Uruguay, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1134,6 +1366,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Uzbekistan, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1144,6 +1378,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Venezuela, statutory minimum wage per month (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1154,6 +1390,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Vietnam, statutory minimum wage per month (regional) (ILO)",
+      "basis": "aggregate",
       "error": null
     },
     {
@@ -1164,6 +1402,8 @@
       "effectivePeriod": "2024",
       "source": "OECD; International Labour Organization (ILOSTAT)",
       "variant": "local currency",
+      "measure": "Zambia, statutory minimum wage per month (occupational (unskilled workers)) (ILO)",
+      "basis": "national",
       "error": null
     },
     {
@@ -1172,6 +1412,8 @@
       "currency": null,
       "period": null,
       "source": null,
+      "basis": "none",
+      "measure": null,
       "error": "HTTP 422"
     }
   ]

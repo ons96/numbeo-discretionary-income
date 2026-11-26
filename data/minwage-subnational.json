@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-11-26T00:00:00.000Z",
+  "note": "Statutory minimum wages below the national level, in local currency per hour. Used in preference to the country rate for matching cities.",
+  "countries": {
+    "United States": {
+      "currency": "USD",
+      "default": 7.25,
+      "effective": "2026",
+      "source": "US DOL consolidated table, revised 2026-11-05",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/mw-consolidated",
+      "regions": {
+        "AK": 14.0, "AR": 11.0, "AZ": 15.15, "CA": 16.9, "CO": 15.16,
+        "CT": 16.94, "DC": 18.4, "DE": 15.0, "FL": 15.0, "HI": 16.0,
+        "IL": 15.0, "MA": 15.0, "MD": 15.0, "ME": 15.1, "MI": 13.73,
+        "MN": 11.41, "MO": 15.0, "MT": 10.85, "NE": 15.0, "NJ": 15.92,
+        "NM": 12.0, "NV": 12.0, "NY": 16.0, "OH": 11.0, "OR": 15.55,
+        "RI": 16.0, "SD": 11.85, "VA": 12.77, "VT": 14.42, "WA": 17.13,
+        "WV": 8.75
+      },
+      "cities": {
+        "New York, NY": 17.0,
+        "Brooklyn, NY": 17.0,
+        "Portland, OR": 16.8
+      }
+    },
+    "Canada": {
+      "currency": "CAD",
+      "default": 18.15,
+      "effective": "2026",
+      "source": "Government of Canada minimum wage database",
+      "sourceUrl": "https://minwage-salairemin.service.canada.ca/en/general.html",
+      "regions": {
+        "Alberta": 15.0,
+        "British Columbia": 18.25,
+        "Manitoba": 16.4,
+        "New Brunswick": 15.9,
+        "Newfoundland and Labrador": 16.35,
+        "Northwest Territories": 17.2,
+        "Nova Scotia": 17.0,
+        "Nunavut": 20.17,
+        "Ontario": 17.95,
+        "Prince Edward Island": 17.3,
+        "Quebec": 16.6,
+        "Saskatchewan": 15.7,
+        "Yukon": 18.51
+      },
+      "cityRegion": {
+        "Brampton": "Ontario", "Burlington": "Ontario", "Burnaby": "British Columbia",
+        "Calgary": "Alberta", "Edmonton": "Alberta", "Guelph": "Ontario",
+        "Halifax": "Nova Scotia", "Hamilton": "Ontario", "Kamloops": "British Columbia",
+        "Kelowna": "British Columbia", "Kingston": "Ontario", "Kitchener": "Ontario",
+        "Lethbridge, AB": "Alberta", "London": "Ontario", "Mississauga": "Ontario",
+        "Moncton": "New Brunswick", "Montreal": "Quebec", "Nanaimo, BC": "British Columbia",
+        "Oakville": "Ontario", "Ottawa": "Ontario", "Quebec City": "Quebec",
+        "Regina": "Saskatchewan", "Saskatoon": "Saskatchewan",
+        "St. John's, Newfoundland and Labrador": "Newfoundland and Labrador",
+        "St.Catharines": "Ontario", "Surrey": "British Columbia", "Toronto": "Ontario",
+        "Vancouver": "British Columbia", "Victoria": "British Columbia",
+        "Waterloo": "Ontario", "Windsor": "Ontario", "Winnipeg": "Manitoba"
+      }
+    },
+    "Switzerland": {
+      "currency": "CHF",
+      "default": null,
+      "effective": "2026",
+      "source": "Swiss cantonal minimum wages (ch.ch), 2026 rates",
+      "sourceUrl": "https://www.ch.ch/en/work/salary/minimum-wage-and-average-salary/",
+      "regions": {
+        "Geneva": 24.59,
+        "Basel-Stadt": 22.2,
+        "Jura": 21.4,
+        "Neuchatel": 21.35,
+        "Ticino": 20.25
+      },
+      "cityRegion": {
+        "Geneva": "Geneva",
+        "Basel": "Basel-Stadt",
+        "Lugano": "Ticino",
+        "Lucerne": "Lucerne"
+      },
+      "cityRates": {
+        "Lucerne": 22.75
+      }
+    }
+  }
+}

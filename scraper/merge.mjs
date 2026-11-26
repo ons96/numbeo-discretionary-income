@@ -20,6 +20,7 @@ async function main() {
   const bulk = await readJson("data/bulk.json", { cities: [] });
   const minwage = await readJson("data/minwage.json", { countries: [] });
   const minWageByCountry = new Map((minwage.countries || []).map((r) => [r.country, r]));
+  const subnat = await readJson("data/minwage-subnational.json", { countries: {} });
   const quality = await readJson("data/quality.json", { cities: [] });
   const crime = await readJson("data/crime.json", { cities: [] });
   const qualityByName = new Map((quality.cities || []).map((r) => [r.name.toLowerCase(), r]));
@@ -117,22 +118,51 @@ async function main() {
     }
   }
 
-  // every city numbeo lists, even the ones we have nothing for yet
-  for (const country of lists.countries || []) {
-    for (const city of country.cities || []) {
-      const slug = slugify(city);
-      if (bySlug.has(slug)) continue;
-      const rec = blank(slug);
-      rec.name = city;
-      rec.city = city;
-      rec.country = country.name;
-      rec.sources.push("list");
-      bySlug.set(slug, rec);
+  // A state / province / canton rate beats the national one where we have it.
+  function localMinWage(rec) {
+    const block = rec.country ? subnat.countries?.[rec.country] : null;
+    if (!block) return null;
+    const city = rec.city || "";
+    const make = (value, scope) =>
+      value == null ? null : {
+        value, currency: block.currency, period: "hour",
+        effectivePeriod: block.effective, source: block.source, scope,
+      };
+    if (block.cityRates?.[city] != null) return make(block.cityRates[city], "city");
+    if (block.cities?.[city] != null) return make(block.cities[city], "city");
+    const region = block.cityRegion?.[city] || (city.match(/,\s*([A-Z]{2})$/) || [])[1];
+    if (region && block.regions?.[region] != null) {
+      const scope = rec.country === "United States" ? "state" : rec.country === "Canada" ? "province" : "canton";
+      return make(block.regions[region], scope);
     }
+    if (block.default != null) {
+      const scope = rec.country === "United States" ? "state" : "country";
+      return make(block.default, scope);
+    }
+    return null;
   }
 
+  // A country row is only usable when it is a national statutory rate. The API
+  // also answers with ILO aggregates - a regional average, a sectoral average,
+  // or a "national floor" - and those must not be shown as the wage an employer
+  // owes. Switzerland has no federal minimum wage, so its regional average would
+  // otherwise put a fabricated 5067 USD/month on Zurich. Rows crawled before the
+  // qualifier was recorded have no basis; keep them only when the measure text
+  // does not betray an aggregate.
+  const isNational = (r) => {
+    if (!r || r.value == null) return false;
+    if (r.basis) return r.basis === "national";
+    return !/regional|sectoral|floor/i.test(String(r.measure || ""));
+  };
+
   for (const rec of bySlug.values()) {
-    if (rec.country && minWageByCountry.has(rec.country)) rec.minWage = minWageByCountry.get(rec.country);
+    const country = rec.country ? minWageByCountry.get(rec.country) : null;
+    // A subnational rate is a real statutory rate, so it wins; the country row
+    // is the fallback and only when it is national.
+    const local = localMinWage(rec);
+    if (local) rec.minWage = local;
+    else if (isNational(country)) rec.minWage = country;
+    else rec.minWage = null;
     const key = rec.city && rec.country ? `${rec.city}, ${rec.country}`.toLowerCase() : null;
     const q = key ? qualityByName.get(key) : null;
     const c = key ? crimeByName.get(key) : null;

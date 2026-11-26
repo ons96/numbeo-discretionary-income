@@ -267,7 +267,7 @@ function apply() {
       const bv = LABELS[b.f.bestId] || "";
       return state.dir * av.localeCompare(bv) || b.f.disc - a.f.disc;
     }
-    const mwKeys = ["minWageMonthlyUsd", "minWageLeftoverMonthly", "minWageHourlyUsd", "totalMonthlyCost", "qualityOfLifeIndex", "safetyIndex", "crimeIndex"];
+    const mwKeys = ["minWageMonthlyUsd", "minWageLeftoverMonthly", "minWageHourlyUsd", "totalMonthlyCost", "qualityOfLifeIndex", "safetyIndex"];
     const av = key === "city" ? a.r.city : (mwKeys.includes(key) ? a.r[key] : a.f[key]);
     const bv = key === "city" ? b.r.city : (mwKeys.includes(key) ? b.r[key] : b.f[key]);
     if (key === "city") return state.dir * String(av).localeCompare(String(bv));
@@ -403,7 +403,6 @@ function render() {
         <td class="num hide-sm">${r.minWageLeftoverMonthly == null ? "–" : money(r.minWageLeftoverMonthly)}</td>
         <td class="num hide-sm">${r.qualityOfLifeIndex == null ? "–" : `${r.qualityEstimated ? '<span title="country-level estimate (no city figure)">≈</span> ' : ""}${r.qualityOfLifeIndex.toFixed(1)}`}</td>
         <td class="num hide-sm">${r.safetyIndex == null ? "–" : r.safetyIndex.toFixed(1)}</td>
-        <td class="num hide-sm">${r.crimeIndex == null ? "–" : r.crimeIndex.toFixed(1)}</td>
       </tr>`;
     })
     .join("");

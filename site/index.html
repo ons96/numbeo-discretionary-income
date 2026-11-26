@@ -87,15 +87,18 @@
       <li><b>Best option</b> — the tab takes, for each city, whichever of the four leaves the most money, and the column says which one that was. Cheapest rent wins in almost every city, but not where a 1-bed is barely dearer than a room.</li>
       <li><b>Left over</b> — salary − living costs − rent, per year.</li>
       <li><b>Quality of life / safety</b> — Numbeo indices; higher is better for both. Safety index and crime index are exact complements (they sum to 100), so only safety is shown. Cities not in Numbeo's QoL ranking use their city page, then a country-level estimate marked ≈.</li>
-      <li><b>Min wage</b> — statutory minimum wage for the country (OECD/ILO), shown as monthly and (derived) hourly. <b>Min wage leftover</b> is that monthly minimum wage minus living costs and the cheapest rent — negative means you cannot survive on minimum wage there.</li>
+      <li><b>Min wage</b> — statutory minimum wage for the country (OECD/ILO), shown as monthly and (derived) hourly. <b>Min wage leftover</b> is that monthly minimum wage minus living costs and this tab's rent — negative means you cannot survive on minimum wage there. A <span class="est">†</span> marks a country-level rate; local rates (US states, Canadian provinces) can be higher.</li>
+      <li><b>≈</b> means the value is an estimate: living costs are scaled from the cost-of-living index when a city's own basket has not been collected, and quality of life falls back to the country figure when a city has no own index.</li>
     </ul>
     <p class="caveat">
       Numbeo figures are crowd-sourced averages, skew towards people who fill in such sites, and can lag reality.
       A city with a handful of contributors is noise, not truth — treat the tail of the list as a starting point,
-      not a verdict.
+      not a verdict. Safety and quality-of-life are crowd-sourced <b>perceptions</b>, not police crime statistics.
+      The hourly minimum wage is derived at 40 h/week; statutory weeks vary (35-48), so it is an approximation.
     </p>
     <p class="links">
-      <a href="data.csv" download>Download the data (CSV)</a> ·
+      <a href="data-full.csv" download>Download the full data (all columns, CSV)</a> ·
+      <a href="data.csv" download>Basic CSV</a> ·
       <a href="https://github.com/ons96/numbeo-discretionary-income">Source &amp; scraper</a>
     </p>
     <p class="stamp" id="stamp"></p>

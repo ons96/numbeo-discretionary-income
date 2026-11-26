@@ -33,6 +33,7 @@ const COLUMNS = [
   "minWageMonthlyUsd",
   "minWageEffective",
   "minWageSource",
+  "minWageScope",
   "minWageLeftoverMonthly",
   "dataDate",
   "expensesEstimated",
@@ -163,6 +164,7 @@ async function main() {
       mwMonthlyUsd == null ? null : round(mwMonthlyUsd, 0),
       mw ? mw.effectivePeriod : null,
       mw ? mw.source : null,
+      mw ? mw.scope || "country" : null,
       mwLeftover == null ? null : round(mwLeftover, 0),
       c.dataDate || null,
       estimated ? 1 : 0,
@@ -181,6 +183,7 @@ async function main() {
 
   const payload = {
     generatedAt: data.generatedAt,
+    checkedAt: (await readJson("data/lastcheck.json", {})).checkedAt || data.generatedAt,
     builtAt: new Date().toISOString(),
     base: "USD",
     fx,
@@ -255,6 +258,11 @@ async function main() {
   await writeFile("site/data.csv", lines.join("\n") + "\n");
   console.log(`site/data.csv: ${lines.length - 1} rows`);
 
+  // Every column the table has, for people who want the full dataset.
+  const fullLines = [COLUMNS.join(",")].concat(rows.map((r) => r.map((v) => esc(v == null ? "" : v)).join(",")));
+  await writeFile("site/data-full.csv", fullLines.join("\n") + "\n");
+  console.log(`site/data-full.csv: ${fullLines.length - 1} rows, ${COLUMNS.length} columns`);
+
   await writeDist();
 }
 
@@ -272,6 +280,7 @@ async function writeDist() {
   await copyFile("site/style.css", `dist/style.${css}.css`);
   await copyFile("site/data.json", "dist/data.json");
   await copyFile("site/data.csv", "dist/data.csv");
+  await copyFile("site/data-full.csv", "dist/data-full.csv");
 
   const html = (await readFile("site/index.html", "utf8"))
     .replace('href="style.css"', `href="style.${css}.css"`)

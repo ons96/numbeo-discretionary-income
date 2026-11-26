@@ -231,6 +231,8 @@ thead th, tbody td { border-right: 1px solid var(--line); }
 thead th:last-child, tbody td:last-child { border-right: 0; }
 
 tbody tr:nth-child(even) { background: var(--row); }
+tbody tr:hover { background: color-mix(in srgb, var(--accent) 7%, var(--bg)); }
+.est { color: var(--muted); font-size: 9px; vertical-align: super; margin-left: 2px; cursor: help; }
 
 td.num { text-align: right; white-space: nowrap; }
 

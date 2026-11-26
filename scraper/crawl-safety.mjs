@@ -110,10 +110,16 @@ async function fetchTable(url, kind, file) {
   const byName = new Map((prev.cities || []).map((r) => [r.name.toLowerCase(), r]));
   for (const r of cities) byName.set(r.name.toLowerCase(), r);
   const merged = [...byName.values()];
+  const prevRanked = prev.ranked || 0;
+  if (prevRanked >= 50 && cities.length < prevRanked * 0.8) {
+    process.exitCode = await failedFetch(file, `only ${cities.length} ranked rows, down from ${prevRanked}`);
+    return;
+  }
 
   const changed = await writeIfChanged(`data/${file}.json`, {
     generatedAt: new Date().toISOString(),
     count: merged.length,
+    ranked: cities.length,
     cities: merged,
   });
   log(`${file}: ${changed ? "wrote" : "unchanged"} ${merged.length} cities (${cities.length} ranked + ${merged.length - cities.length} backfilled)`);

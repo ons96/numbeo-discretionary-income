@@ -127,6 +127,20 @@ async function main() {
   const cities = [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
   const withData = cities.filter((c) => c.salary != null || c.rent.oneBedCentre != null).length;
 
+  // Failsafe: never replace a good dataset with a collapsed one. A blocked or
+  // empty scrape yields a short list; keep yesterday's file instead.
+  const prev = await readJson("data/cities.json", { count: 0 });
+  if ((prev.count || 0) >= 50 && cities.length < prev.count * 0.8) {
+    console.log(`::error::merge produced ${cities.length} cities, down from ${prev.count} - keeping data/cities.json`);
+    process.exitCode = 1;
+    return;
+  }
+  if (!withData) {
+    console.log(`::error::merge produced 0 cities with salary or rent - keeping data/cities.json`);
+    process.exitCode = 1;
+    return;
+  }
+
   const changed = await writeIfChanged("data/cities.json", {
     generatedAt: new Date().toISOString(),
     count: cities.length,

@@ -70,9 +70,14 @@ async function main() {
     rec.sources.push("bulk");
   }
 
+  // City pages crawled from city_result.jsp carry no /in/ slug, so match those
+  // by the country||city key instead of dropping them.
+  const byKey = new Map([...bySlug.values()].map((r) => [`${r.country}||${r.city}`.toLowerCase(), r]));
   for (const p of pages.cities || []) {
-    if (!p.slug) continue;
-    const rec = touch(p.slug);
+    const rec = p.slug
+      ? touch(p.slug)
+      : byKey.get(String(p.key || `${p.country}||${p.city}`).toLowerCase());
+    if (!rec) continue;
     const newer = !rec.scrapedAt || Date.parse(p.scrapedAt || 0) >= Date.parse(rec.scrapedAt);
     if (!rec.name) {
       rec.name = p.name || p.city;
@@ -96,6 +101,20 @@ async function main() {
       if (p.dataDate) rec.dataDate = p.dataDate;
     }
     rec.sources.push("page");
+  }
+
+  // every city numbeo lists, even the ones we have nothing for yet
+  for (const country of lists.countries || []) {
+    for (const city of country.cities || []) {
+      const slug = slugify(city);
+      if (bySlug.has(slug)) continue;
+      const rec = blank(slug);
+      rec.name = city;
+      rec.city = city;
+      rec.country = country.name;
+      rec.sources.push("list");
+      bySlug.set(slug, rec);
+    }
   }
 
   // every city numbeo lists, even the ones we have nothing for yet

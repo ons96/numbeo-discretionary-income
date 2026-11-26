@@ -83,10 +83,15 @@ Two workflows:
 ### Living costs
 
 The bulk table has no "single person living costs" column, so those get crawled
-per city when you have the patience (`crawl-cities.mjs --budget=200`). Every
-other city shows **≈** and uses an estimate: cost-of-living index / 100 × the
-New York basket, with the anchor taken from the median of the cities that do
-have real figures. The estimates get better as pages arrive.
+per city. The daily crawl takes **25 new pages a run**, which covers the
+remaining cities in about three weeks and then re-checks the oldest ones as they
+pass `--max-age-days`. Set the repository variable `PAGE_BUDGET` to change the
+drip rate, or to `0` to pause it; `crawl-cities.mjs --budget=0` skips the step.
+
+Every city without a real figure shows **≈** and uses an estimate:
+cost-of-living index / 100 × the New York basket, with the anchor taken from the
+median of the cities that do have real figures. The estimates get better as
+pages arrive.
 
 ### Requests, caching, and getting blocked
 
@@ -97,7 +102,9 @@ A refresh is **two requests a day** - that is the whole budget:
 | `prices_by_city.jsp` | salary + the four rents, all 566 cities |
 | `rankings_current.jsp` | cost-of-living / rent / purchasing-power indices |
 
-Everything else is optional (`--page_budget`, `refresh_lists`) and off by default.
+The per-city page drip (`PAGE_BUDGET`, default 25) and the full country/city
+list (`refresh_lists`, off by default) are on top of that, and both are capped so
+a run stays polite.
 
 On top of that:
 

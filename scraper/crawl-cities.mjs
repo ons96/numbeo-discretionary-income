@@ -50,13 +50,24 @@ async function readJson(path, fallback) {
 }
 
 async function main() {
+  // Prefer the full Numbeo list, but the dataset we already rank is enough to
+  // start: it gives (country, city) pairs without a 235-request list crawl.
   const lists = await readJson("data/lists.json", null);
-  if (!lists) throw new Error("data/lists.json missing - run crawl-lists.mjs first");
+  const seed = await readJson("data/cities.json", { cities: [] });
 
   let pairs = [];
-  for (const c of lists.countries) {
-    if (ONLY_COUNTRIES && !ONLY_COUNTRIES.includes(c.name)) continue;
-    for (const city of c.cities) pairs.push({ country: c.name, city });
+  if (lists) {
+    for (const c of lists.countries) {
+      if (ONLY_COUNTRIES && !ONLY_COUNTRIES.includes(c.name)) continue;
+      for (const city of c.cities) pairs.push({ country: c.name, city });
+    }
+  } else {
+    for (const c of seed.cities || []) {
+      if (!c.city || !c.country) continue;
+      if (ONLY_COUNTRIES && !ONLY_COUNTRIES.includes(c.country)) continue;
+      pairs.push({ country: c.country, city: c.city });
+    }
+    log(`data/lists.json missing, using ${pairs.length} cities from data/cities.json`);
   }
 
   if (SHARDS > 1) {

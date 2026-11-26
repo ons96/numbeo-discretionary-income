@@ -39,7 +39,7 @@ jobs:
           echo "--- sanity"
           node -e "const d=require('./site/data.json'); console.log(d.count, 'cities,', Object.keys(d.fx).length, 'currencies'); if (!d.count) process.exit(1)"
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           # build.mjs writes dist/ with content-hashed css/js, so a cached
           # app.js can never be paired with a newer index.html

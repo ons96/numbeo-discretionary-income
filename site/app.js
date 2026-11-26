@@ -12,11 +12,11 @@ const LABELS = {
 
 // The page opens comparing every city against this one; leave it blank for no
 // baseline, or name any city in the dataset.
-const DEFAULT_BASELINE = "Oakville, Canada";
+const DEFAULT_BASELINE = "";
 
 const state = {
   scenario: "best",
-  currency: "USD",
+  currency: "CAD",
   q: "",
   country: "",
   completeOnly: true,
@@ -97,7 +97,7 @@ function buildCurrency() {
   try {
     region = new Intl.Locale(navigator.language || "en-US").region || "";
   } catch {}
-  const guess = byRegion[region] || "USD";
+  const guess = "CAD";
   state.currency = codes.includes(guess) ? guess : "USD";
   sel.innerHTML = ordered.map((c) => `<option${c === state.currency ? " selected" : ""}>${c}</option>`).join("");
   sel.onchange = () => {
@@ -267,8 +267,9 @@ function apply() {
       const bv = LABELS[b.f.bestId] || "";
       return state.dir * av.localeCompare(bv) || b.f.disc - a.f.disc;
     }
-    const av = key === "city" ? a.r.city : a.f[key];
-    const bv = key === "city" ? b.r.city : b.f[key];
+    const mwKeys = ["minWageMonthlyUsd", "minWageLeftoverMonthly", "minWageHourlyUsd"];
+    const av = key === "city" ? a.r.city : (mwKeys.includes(key) ? a.r[key] : a.f[key]);
+    const bv = key === "city" ? b.r.city : (mwKeys.includes(key) ? b.r[key] : b.f[key]);
     if (key === "city") return state.dir * String(av).localeCompare(String(bv));
     if (av == null && bv == null) return 0;
     if (av == null) return 1;
@@ -397,6 +398,8 @@ function render() {
         <td class="num hide-sm">${f.expenses == null ? "–" : `${r.expensesEstimated ? '<span title="estimated from the cost of living index">≈</span> ' : ""}${money(f.expenses)}`}</td>
         <td class="num">${f.rent == null ? "–" : money(f.rent)}</td>
         <td class="num hide-sm">${pct(f.share)}</td>
+        <td class="num hide-sm">${r.minWageMonthlyUsd == null ? "–" : money(r.minWageMonthlyUsd)}</td>
+        <td class="num hide-sm">${r.minWageLeftoverMonthly == null ? "–" : money(r.minWageLeftoverMonthly)}</td>
       </tr>`;
     })
     .join("");

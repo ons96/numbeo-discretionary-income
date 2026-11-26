@@ -22,6 +22,14 @@ const COLUMNS = [
   "groceriesIndex",
   "restaurantIndex",
   "purchasingPowerIndex",
+  "minWageValue",
+  "minWageCurrency",
+  "minWagePeriod",
+  "minWageHourlyUsd",
+  "minWageMonthlyUsd",
+  "minWageEffective",
+  "minWageSource",
+  "minWageLeftoverMonthly",
   "dataDate",
   "expensesEstimated",
 ];
@@ -100,6 +108,30 @@ async function main() {
     const estimated = real == null && idx.coli > 0;
     const expenses = real ?? (estimated ? Math.round((idx.coli / 100) * anchor) : null);
     const rent = c.rent || {};
+    // minimum wage -> USD hourly + monthly. value is in local currency; convert via FX.
+    const mw = c.minWage || null;
+    let mwHourlyUsd = null;
+    let mwMonthlyUsd = null;
+    if (mw && mw.value != null && mw.currency && fx[mw.currency]) {
+      const rate = fx[mw.currency]; // 1 USD = rate currency
+      const vUsd = mw.value / rate;
+      const hoursPerWeek = 40;
+      const hoursPerMonth = (hoursPerWeek * 52) / 12; // ~173.3
+      if (mw.period === "hour") {
+        mwHourlyUsd = vUsd;
+        mwMonthlyUsd = vUsd * hoursPerMonth;
+      } else if (mw.period === "day") {
+        mwHourlyUsd = vUsd / 8;
+        mwMonthlyUsd = vUsd * (22); // ~22 working days/month
+      } else if (mw.period === "month") {
+        mwMonthlyUsd = vUsd;
+        mwHourlyUsd = vUsd / hoursPerMonth;
+      }
+    }
+    // cheapest rent among the four options
+    const rentVals = [rent.oneBedCentre, rent.oneBedOutside, rent.threeBedCentre && rent.threeBedCentre/3, rent.threeBedOutside && rent.threeBedOutside/3].filter((v) => v != null);
+    const cheapestRent = rentVals.length ? Math.min(...rentVals) : null;
+    const mwLeftover = (mwMonthlyUsd != null && expenses != null && cheapestRent != null) ? (mwMonthlyUsd - expenses - cheapestRent) : null;
     rows.push([
       c.name || c.city,
       c.country,
@@ -116,6 +148,14 @@ async function main() {
       round(idx.groceriesIndex, 1),
       round(idx.restaurantIndex, 1),
       round(idx.purchasingPowerIndex, 1),
+      mw ? mw.value : null,
+      mw ? mw.currency : null,
+      mw ? mw.period : null,
+      mwHourlyUsd == null ? null : round(mwHourlyUsd, 2),
+      mwMonthlyUsd == null ? null : round(mwMonthlyUsd, 0),
+      mw ? mw.effectivePeriod : null,
+      mw ? mw.source : null,
+      mwLeftover == null ? null : round(mwLeftover, 0),
       c.dataDate || null,
       estimated ? 1 : 0,
     ]);

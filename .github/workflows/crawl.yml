@@ -71,6 +71,9 @@ jobs:
         if: inputs.page_budget != '0'
         run: node scraper/crawl-cities.mjs --budget=${{ inputs.page_budget }} --max-age-days=${{ inputs.max_age_days || 30 }}
 
+      - name: Minimum wage by country
+        run: node scraper/crawl-minwage.mjs
+
       - name: Merge
         run: |
           node scraper/merge.mjs

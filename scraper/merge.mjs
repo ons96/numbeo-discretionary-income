@@ -18,6 +18,8 @@ const slugify = (s) =>
 
 async function main() {
   const bulk = await readJson("data/bulk.json", { cities: [] });
+  const minwage = await readJson("data/minwage.json", { countries: [] });
+  const minWageByCountry = new Map((minwage.countries || []).map((r) => [r.country, r]));
   const pages = await readJson("data/pages.json", { cities: [] });
   const lists = await readJson("data/lists.json", { countries: [] });
 
@@ -32,6 +34,7 @@ async function main() {
     salary: null,
     singleExpenses: null,
     family4Expenses: null,
+    minWage: null,
     ok: true,
     dataDate: null,
     scrapedAt: null,
@@ -99,6 +102,10 @@ async function main() {
       rec.sources.push("list");
       bySlug.set(slug, rec);
     }
+  }
+
+  for (const rec of bySlug.values()) {
+    if (rec.country && minWageByCountry.has(rec.country)) rec.minWage = minWageByCountry.get(rec.country);
   }
 
   const cities = [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));

@@ -1,0 +1,1182 @@
+{
+  "generatedAt": "2026-11-26T03:12:05.284Z",
+  "count": 121,
+  "countries": [
+    {
+      "country": "Albania",
+      "value": 50000,
+      "currency": "ALL",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Argentina",
+      "value": 271571,
+      "currency": "ARS",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Armenia",
+      "value": 75000,
+      "currency": "AMD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Australia",
+      "value": 24.53,
+      "currency": "AUD",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Austria",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Azerbaijan",
+      "value": 345,
+      "currency": "AZN",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Bahrain",
+      "value": 300,
+      "currency": "BHD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Bangladesh",
+      "value": 12500,
+      "currency": "BDT",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Belarus",
+      "value": 626,
+      "currency": "BYN",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Belgium",
+      "value": 2108.4,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Bolivia",
+      "value": 2500,
+      "currency": "BOB",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Bosnia And Herzegovina",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "effectivePeriod": null,
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": null,
+      "error": "no value"
+    },
+    {
+      "country": "Botswana",
+      "value": 1883.03,
+      "currency": "BWP",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Brazil",
+      "value": 1518,
+      "currency": "BRL",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Bulgaria",
+      "value": 620,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Cambodia",
+      "value": 200,
+      "currency": "KHR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Canada",
+      "value": 16.57,
+      "currency": "CAD",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Cayman Islands",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Chile",
+      "value": 519333,
+      "currency": "CLP",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "China",
+      "value": 1930,
+      "currency": "CNY",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Colombia",
+      "value": 1423500,
+      "currency": "COP",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Costa Rica",
+      "value": 367108.56,
+      "currency": "CRC",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Croatia",
+      "value": 970,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Cyprus",
+      "value": 1088,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Czech Republic",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Denmark",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Dominican Republic",
+      "value": 19450,
+      "currency": "DOP",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Ecuador",
+      "value": 470,
+      "currency": "USD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Egypt",
+      "value": 6000,
+      "currency": "EGP",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "El Salvador",
+      "value": 365,
+      "currency": "USD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Estonia",
+      "value": 5.31,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Finland",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "France",
+      "value": 11.88,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Georgia",
+      "value": 20,
+      "currency": "GEL",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Germany",
+      "value": 12.82,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Ghana",
+      "value": 471.53,
+      "currency": "GHS",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Greece",
+      "value": 1012.09,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Guatemala",
+      "value": 3343.01,
+      "currency": "GTQ",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Hong Kong (China)",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "effectivePeriod": null,
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": null,
+      "error": "no value"
+    },
+    {
+      "country": "Hungary",
+      "value": 1672,
+      "currency": "HUF",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Iceland",
+      "value": 425985,
+      "currency": "ISK",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "India",
+      "value": 4628,
+      "currency": "INR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Indonesia",
+      "value": 5067381,
+      "currency": "IDR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Iran",
+      "value": 53073300,
+      "currency": "IRR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Iraq",
+      "value": 350000,
+      "currency": "IQD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Ireland",
+      "value": 13.5,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Israel",
+      "value": 33.82,
+      "currency": "ILS",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Italy",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Ivory Coast",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Jamaica",
+      "value": 64950,
+      "currency": "JMD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Japan",
+      "value": 1071.5,
+      "currency": "JPY",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Jersey",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Jordan",
+      "value": 260,
+      "currency": "JOD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Kazakhstan",
+      "value": 85000,
+      "currency": "KZT",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Kenya",
+      "value": 16033.14,
+      "currency": "KES",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Kosovo (Disputed Territory)",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Kuwait",
+      "value": 75,
+      "currency": "KWD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Kyrgyzstan",
+      "value": 2534,
+      "currency": "KGS",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Latvia",
+      "value": 740,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Lebanon",
+      "value": 18000000,
+      "currency": "LBP",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Lithuania",
+      "value": 6.35,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Luxembourg",
+      "value": 15.5,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Malaysia",
+      "value": 1500,
+      "currency": "MYR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Maldives",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Malta",
+      "value": 961,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Mauritius",
+      "value": 15000,
+      "currency": "MUR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Mexico",
+      "value": 278.8,
+      "currency": "MXN",
+      "period": "day",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Moldova",
+      "value": 6300,
+      "currency": "MDL",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Mongolia",
+      "value": 660000,
+      "currency": "MNT",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Montenegro",
+      "value": 670,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Morocco",
+      "value": 3120,
+      "currency": "MAD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Mozambique",
+      "value": 9497.5,
+      "currency": "MZN",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Namibia",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Nepal",
+      "value": 17300,
+      "currency": "NPR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Netherlands",
+      "value": 2228.4,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "New Zealand",
+      "value": 23.41,
+      "currency": "NZD",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Nigeria",
+      "value": 65000,
+      "currency": "NGN",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "North Macedonia",
+      "value": 38507,
+      "currency": "MKD",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Norway",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Oman",
+      "value": 325,
+      "currency": "OMR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Pakistan",
+      "value": 37000,
+      "currency": "PKR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Panama",
+      "value": 482.18,
+      "currency": "PAB",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Paraguay",
+      "value": 2798309,
+      "currency": "PYG",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Peru",
+      "value": 1130,
+      "currency": "PEN",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Philippines",
+      "value": 8302,
+      "currency": "PHP",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Poland",
+      "value": 4666,
+      "currency": "PLN",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Portugal",
+      "value": 1015,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Puerto Rico",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Qatar",
+      "value": 1000,
+      "currency": "QAR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Romania",
+      "value": 4050,
+      "currency": "RON",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Russia",
+      "value": 22440,
+      "currency": "RUB",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Rwanda",
+      "value": 2600,
+      "currency": "RWF",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Saudi Arabia",
+      "value": 4000,
+      "currency": "SAR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Serbia",
+      "value": 87207,
+      "currency": "RSD",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Singapore",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Slovakia",
+      "value": 4.69,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Slovenia",
+      "value": 1277.72,
+      "currency": "EUR",
+      "period": "month",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "South Africa",
+      "value": 4776.85,
+      "currency": "ZAR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "South Korea",
+      "value": 10030,
+      "currency": "KRW",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Spain",
+      "value": 9.26,
+      "currency": "EUR",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Sri Lanka",
+      "value": 17500,
+      "currency": "LKR",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Sweden",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "Switzerland",
+      "value": 4212.224,
+      "currency": "CHF",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Taiwan",
+      "value": 29500,
+      "currency": "TWD",
+      "period": "month",
+      "source": "Wikipedia",
+      "error": null,
+      "effectivePeriod": "2026",
+      "variant": "Taiwan minimum wage monthly"
+    },
+    {
+      "country": "Tajikistan",
+      "value": 800,
+      "currency": "TJS",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Tanzania",
+      "value": 150000,
+      "currency": "TZS",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Thailand",
+      "value": 8963,
+      "currency": "THB",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Trinidad And Tobago",
+      "value": 3550,
+      "currency": "TTD",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD/ILO",
+      "variant": "Trinidad and Tobago, statutory minimum wage per month",
+      "error": null
+    },
+    {
+      "country": "Tunisia",
+      "value": 491.504,
+      "currency": "TND",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Turkey",
+      "value": 26005.5,
+      "currency": "TRY",
+      "period": "month",
+      "source": "OECD/ILO",
+      "error": null,
+      "effectivePeriod": "2025",
+      "variant": "Turkey, statutory minimum wage per month"
+    },
+    {
+      "country": "Uganda",
+      "value": 130000,
+      "currency": "UGX",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Ukraine",
+      "value": 8647,
+      "currency": "UAH",
+      "period": "month",
+      "effectivePeriod": "2026",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "United Arab Emirates",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    },
+    {
+      "country": "United Kingdom",
+      "value": 12.02,
+      "currency": "GBP",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "United States",
+      "value": 7.25,
+      "currency": "USD",
+      "period": "hour",
+      "effectivePeriod": "2025",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Uruguay",
+      "value": 22268,
+      "currency": "UYU",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Uzbekistan",
+      "value": 1050000,
+      "currency": "UZS",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Venezuela",
+      "value": 130,
+      "currency": "VES",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Vietnam",
+      "value": 4960000,
+      "currency": "VND",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Zambia",
+      "value": 1300,
+      "currency": "ZMW",
+      "period": "month",
+      "effectivePeriod": "2024",
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": "local currency",
+      "error": null
+    },
+    {
+      "country": "Zimbabwe",
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
+    }
+  ]
+}

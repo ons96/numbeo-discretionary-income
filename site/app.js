@@ -401,7 +401,7 @@ function render() {
         <td class="num hide-sm">${r.totalMonthlyCost == null ? "–" : money(r.totalMonthlyCost)}</td>
         <td class="num hide-sm">${r.minWageMonthlyUsd == null ? "–" : money(r.minWageMonthlyUsd)}</td>
         <td class="num hide-sm">${r.minWageLeftoverMonthly == null ? "–" : money(r.minWageLeftoverMonthly)}</td>
-        <td class="num hide-sm">${r.qualityOfLifeIndex == null ? "–" : r.qualityOfLifeIndex.toFixed(1)}</td>
+        <td class="num hide-sm">${r.qualityOfLifeIndex == null ? "–" : `${r.qualityEstimated ? '<span title="country-level estimate (no city figure)">≈</span> ' : ""}${r.qualityOfLifeIndex.toFixed(1)}`}</td>
         <td class="num hide-sm">${r.safetyIndex == null ? "–" : r.safetyIndex.toFixed(1)}</td>
         <td class="num hide-sm">${r.crimeIndex == null ? "–" : r.crimeIndex.toFixed(1)}</td>
       </tr>`;

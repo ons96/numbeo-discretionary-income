@@ -77,6 +77,9 @@ jobs:
       - name: Quality of life and crime indices
         run: node scraper/crawl-safety.mjs
 
+      - name: Backfill indices for unranked cities
+        run: node scraper/backfill-indices.mjs
+
       - name: Merge
         run: |
           node scraper/merge.mjs

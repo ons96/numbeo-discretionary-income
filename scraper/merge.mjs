@@ -23,6 +23,7 @@ async function main() {
   const quality = await readJson("data/quality.json", { cities: [] });
   const crime = await readJson("data/crime.json", { cities: [] });
   const qualityByName = new Map((quality.cities || []).map((r) => [r.name.toLowerCase(), r]));
+  const qualityByCountry = new Map((quality.countries || []).map((r) => [r.country.toLowerCase(), r]));
   const crimeByName = new Map((crime.cities || []).map((r) => [r.name.toLowerCase(), r]));
   const pages = await readJson("data/pages.json", { cities: [] });
   const lists = await readJson("data/lists.json", { countries: [] });
@@ -116,7 +117,9 @@ async function main() {
     const key = rec.city && rec.country ? `${rec.city}, ${rec.country}`.toLowerCase() : null;
     const q = key ? qualityByName.get(key) : null;
     const c = key ? crimeByName.get(key) : null;
-    rec.qualityOfLifeIndex = q ? q.qualityOfLifeIndex : null;
+    const qc = rec.country ? qualityByCountry.get(rec.country.toLowerCase()) : null;
+    rec.qualityOfLifeIndex = q ? q.qualityOfLifeIndex : qc ? qc.qualityOfLifeIndex : null;
+    rec.qualityEstimated = !q && !!qc;
     rec.safetyIndex = c ? c.safetyIndex : q ? q.safetyIndex : null;
     rec.crimeIndex = c ? c.crimeIndex : null;
   }

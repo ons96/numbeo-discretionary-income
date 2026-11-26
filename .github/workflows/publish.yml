@@ -1,7 +1,9 @@
 name: Publish
 
 # Builds the site from whatever is committed in data/ and deploys it to Pages.
-# Runs on every push, so new data shows up without touching a workflow.
+# Deploys by pushing dist/ to the gh-pages branch instead of using the pages
+# artifact API: deploy-pages@v4 intermittently reported "0 artifacts" right
+# after a successful upload, failing the deploy. A branch push is deterministic.
 
 on:
   push:
@@ -14,9 +16,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -25,9 +25,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -38,11 +35,10 @@ jobs:
           node scraper/build.mjs
           echo "--- sanity"
           node -e "const d=require('./site/data.json'); console.log(d.count, 'cities,', Object.keys(d.fx).length, 'currencies'); if (!d.count) process.exit(1)"
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          # build.mjs writes dist/ with content-hashed css/js, so a cached
-          # app.js can never be paired with a newer index.html
-          path: dist
-      - id: deploy
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true

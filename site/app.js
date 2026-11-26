@@ -127,6 +127,17 @@ function buildCountries() {
 }
 
 function wire() {
+  // Sortable headers must be reachable without a mouse.
+  for (const th of document.querySelectorAll("thead th[data-sort]")) {
+    th.tabIndex = 0;
+    th.setAttribute("role", "button");
+    th.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        th.click();
+      }
+    });
+  }
   for (const b of document.querySelectorAll(".scenarios button")) {
     b.onclick = () => {
       state.scenario = b.dataset.scenario;
@@ -278,9 +289,9 @@ function apply() {
       const bv = LABELS[b.f.bestId] || "";
       return state.dir * av.localeCompare(bv) || b.f.disc - a.f.disc;
     }
-    const mwKeys = ["minWageMonthlyUsd", "minWageLeftoverMonthly", "minWageHourlyUsd", "totalMonthlyCost", "qualityOfLifeIndex", "safetyIndex"];
-    const av = key === "city" ? a.r.city : (mwKeys.includes(key) ? a.r[key] : a.f[key]);
-    const bv = key === "city" ? b.r.city : (mwKeys.includes(key) ? b.r[key] : b.f[key]);
+    const mwKeys = ["minWageMonthlyUsd", "minWageHourlyUsd", "totalMonthlyCost", "qualityOfLifeIndex", "safetyIndex"];
+    const av = key === "city" ? a.r.city : key === "minWageLeftoverMonthly" ? mwLeft(a.r, a.f) : (mwKeys.includes(key) ? a.r[key] : a.f[key]);
+    const bv = key === "city" ? b.r.city : key === "minWageLeftoverMonthly" ? mwLeft(b.r, b.f) : (mwKeys.includes(key) ? b.r[key] : b.f[key]);
     if (key === "city") return state.dir * String(av).localeCompare(String(bv));
     if (av == null && bv == null) return 0;
     if (av == null) return 1;
@@ -378,6 +389,12 @@ function summary() {
     <span>best <b>${p(vals[vals.length - 1])}</b>/yr${top ? ` (${top.r.city})` : ""}</span>`;
 }
 
+// Min wage minus this scenario's living costs and rent, in monthly USD.
+function mwLeft(r, f) {
+  if (r.minWageMonthlyUsd == null || f.expenses == null || f.rent == null) return null;
+  return r.minWageMonthlyUsd - f.expenses - f.rent;
+}
+
 function render() {
   apply();
 
@@ -393,7 +410,7 @@ function render() {
   $("#summary").innerHTML = summary();
   renderBaseline();
   renderBaselineNotice();
-  $("#updated").textContent = `updated ${new Date(D.generatedAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`;
+  $("#updated").textContent = `updated ${new Date(D.checkedAt || D.generatedAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`;
 
   const shown = filtered.slice(0, state.shown);
   const html = shown
@@ -410,8 +427,8 @@ function render() {
         <td class="num">${f.rent == null ? "–" : money(f.rent)}</td>
         <td class="num hide-sm">${pct(f.share)}</td>
         <td class="num hide-sm">${r.totalMonthlyCost == null ? "–" : money(r.totalMonthlyCost)}</td>
-        <td class="num hide-sm">${r.minWageMonthlyUsd == null ? "–" : money(r.minWageMonthlyUsd)}</td>
-        <td class="num hide-sm">${r.minWageLeftoverMonthly == null ? "–" : money(r.minWageLeftoverMonthly)}</td>
+        <td class="num hide-sm">${r.minWageMonthlyUsd == null ? "–" : `${money(r.minWageMonthlyUsd)}${r.minWageScope === "country" ? '<span class="est" title="country-level statutory rate, not a city rate">†</span>' : ""}`}</td>
+        <td class="num hide-sm">${mwLeft(r, f) == null ? "–" : money(mwLeft(r, f))}</td>
         <td class="num hide-sm">${r.qualityOfLifeIndex == null ? "–" : `${r.qualityEstimated ? '<span title="country-level estimate (no city figure)">≈</span> ' : ""}${r.qualityOfLifeIndex.toFixed(1)}`}</td>
         <td class="num hide-sm">${r.safetyIndex == null ? "–" : r.safetyIndex.toFixed(1)}</td>
       </tr>`;

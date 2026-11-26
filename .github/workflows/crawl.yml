@@ -88,6 +88,11 @@ jobs:
             if (!d.withData) { console.log('::error::nothing scraped'); process.exit(1); }
           "
 
+      - name: Stamp check time
+        # Separate from the data timestamps: the data may be unchanged while the
+        # check itself is current, and the site says so.
+        run: node -e "const fs=require('fs');fs.writeFileSync('data/lastcheck.json',JSON.stringify({checkedAt:new Date().toISOString()}))"
+
       - name: Commit
         id: commit
         run: |

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T03:12:05.284Z",
+  "generatedAt": "2026-11-26T15:46:20.726Z",
   "count": 121,
   "countries": [
     {
@@ -1004,13 +1004,11 @@
     },
     {
       "country": "Taiwan",
-      "value": 29500,
-      "currency": "TWD",
-      "period": "month",
-      "source": "Wikipedia",
-      "error": null,
-      "effectivePeriod": "2026",
-      "variant": "Taiwan minimum wage monthly"
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
     },
     {
       "country": "Tajikistan",
@@ -1044,13 +1042,13 @@
     },
     {
       "country": "Trinidad And Tobago",
-      "value": 3550,
-      "currency": "TTD",
-      "period": "month",
-      "effectivePeriod": "2024",
-      "source": "OECD/ILO",
-      "variant": "Trinidad and Tobago, statutory minimum wage per month",
-      "error": null
+      "value": null,
+      "currency": null,
+      "period": null,
+      "effectivePeriod": null,
+      "source": "OECD; International Labour Organization (ILOSTAT)",
+      "variant": null,
+      "error": "no value"
     },
     {
       "country": "Tunisia",
@@ -1064,13 +1062,11 @@
     },
     {
       "country": "Turkey",
-      "value": 26005.5,
-      "currency": "TRY",
-      "period": "month",
-      "source": "OECD/ILO",
-      "error": null,
-      "effectivePeriod": "2025",
-      "variant": "Turkey, statutory minimum wage per month"
+      "value": null,
+      "currency": null,
+      "period": null,
+      "source": null,
+      "error": "HTTP 422"
     },
     {
       "country": "Uganda",

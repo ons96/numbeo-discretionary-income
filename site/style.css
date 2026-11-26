@@ -226,6 +226,10 @@ tbody td {
   vertical-align: top;
 }
 
+/* vertical gridlines: functional, easier to track a row across many columns */
+thead th, tbody td { border-right: 1px solid var(--line); }
+thead th:last-child, tbody td:last-child { border-right: 0; }
+
 tbody tr:nth-child(even) { background: var(--row); }
 
 td.num { text-align: right; white-space: nowrap; }

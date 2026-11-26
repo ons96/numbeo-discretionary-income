@@ -93,6 +93,14 @@ jobs:
             if (!d.withData) { console.log('::error::nothing scraped'); process.exit(1); }
           "
 
+      - name: Check minimum-wage provenance
+        # The wage API sometimes answers with an ILO aggregate - a regional or
+        # sectoral average, or a "national floor" - instead of the statutory rate
+        # a country actually sets. Switzerland has no federal minimum wage, so an
+        # unchecked regional average lands a fabricated wage on Zurich. Fail the
+        # run rather than publish it.
+        run: node scraper/check-minwage.mjs
+
       - name: Stamp check time
         # Separate from the data timestamps: the data may be unchanged while the
         # check itself is current, and the site says so.

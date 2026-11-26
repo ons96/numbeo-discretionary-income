@@ -164,8 +164,26 @@ Environment: `CONCURRENCY` (default 2) and `MIN_GAP_MS` (default 900).
 * `data/indices.json` — Numbeo's index table (cost of living, rent, groceries,
   restaurant, purchasing power) for the ~575 ranked cities, matched by slug.
 * `data/cities.json` — the master record set, one entry per country+city.
+* `data/minwage.json` — statutory minimum wage per country from one free
+  OECD/ILO API. Each row keeps the API's own `measure` string and a `basis`:
+  `national` for a rate the country sets, `aggregate` when the API only offers an
+  average of local or sectoral rates, or a "national floor" nobody is obliged to
+  pay. Aggregates are never shown as a city's wage.
+* `data/minwage-subnational.json` — **hand-maintained.** Minimum wages set below
+  the national level, in local currency per hour: US states and the cities with
+  their own higher rate, Canadian provinces, Swiss cantons and cities. A rate
+  here beats the country rate for matching cities, and it is the only way a
+  city in a country with no national minimum (Switzerland) gets a figure. Update
+  the rates and the `source`/`sourceUrl` when a legislature moves them; nothing
+  crawls it.
+* `data/pages.json` — per-city Numbeo pages, the source of real (non-estimated)
+  living costs. Filled a few dozen cities per crawl by `crawl-cities.mjs`.
 * `site/data.json` — compact columnar payload the page loads.
 * `site/data.csv` — same data, one row per city, all four scenarios.
+
+`scraper/check-minwage.mjs` is the guard for the wage columns: it runs in the
+crawl workflow after the merge and fails the job if any city would show a wage
+that came from an aggregate, or a Swiss city a rate no Swiss statute sets.
 
 Records that fail keep `ok: false` with the HTTP status, so a blocked run is
 visible in the data rather than silently dropping cities.

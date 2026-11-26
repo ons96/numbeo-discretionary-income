@@ -389,6 +389,21 @@ function summary() {
     <span>best <b>${p(vals[vals.length - 1])}</b>/yr${top ? ` (${top.r.city})` : ""}</span>`;
 }
 
+// Where the statutory rate comes from: a country rate is not this city's rate
+// when a state, province, canton or city sets its own higher one.
+const SCOPE_NOTE = {
+  country: ["†", "country-level statutory rate, not a city rate"],
+  state: ["§", "US state minimum wage"],
+  province: ["§", "Canadian provincial minimum wage"],
+  canton: ["§", "Swiss cantonal minimum wage"],
+  city: ["§", "city-level minimum wage"],
+};
+
+function mwNote(r) {
+  const [mark, title] = SCOPE_NOTE[r.minWageScope] || SCOPE_NOTE.country;
+  return `<span class="est" title="${esc(title)}">${mark}</span>`;
+}
+
 // Min wage minus this scenario's living costs and rent, in monthly USD.
 function mwLeft(r, f) {
   if (r.minWageMonthlyUsd == null || f.expenses == null || f.rent == null) return null;
@@ -427,7 +442,7 @@ function render() {
         <td class="num">${f.rent == null ? "–" : money(f.rent)}</td>
         <td class="num hide-sm">${pct(f.share)}</td>
         <td class="num hide-sm">${r.totalMonthlyCost == null ? "–" : money(r.totalMonthlyCost)}</td>
-        <td class="num hide-sm">${r.minWageMonthlyUsd == null ? "–" : `${money(r.minWageMonthlyUsd)}${r.minWageScope === "country" ? '<span class="est" title="country-level statutory rate, not a city rate">†</span>' : ""}`}</td>
+        <td class="num hide-sm">${r.minWageMonthlyUsd == null ? "–" : `${money(r.minWageMonthlyUsd)}${mwNote(r)}`}</td>
         <td class="num hide-sm">${mwLeft(r, f) == null ? "–" : money(mwLeft(r, f))}</td>
         <td class="num hide-sm">${r.qualityOfLifeIndex == null ? "–" : `${r.qualityEstimated ? '<span title="country-level estimate (no city figure)">≈</span> ' : ""}${r.qualityOfLifeIndex.toFixed(1)}`}</td>
         <td class="num hide-sm">${r.safetyIndex == null ? "–" : r.safetyIndex.toFixed(1)}</td>

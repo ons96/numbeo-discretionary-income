@@ -1,7 +1,9 @@
 name: Crawl
 
 # Refreshes the data from numbeo.com and commits it; Publish then rebuilds the
-# site. Two requests, about five seconds.
+# site. The daily refresh is two requests; the city-page drip below adds up to
+# PAGE_BUDGET more (25 by default, about a minute), and the optional full list
+# crawl adds 235 on top of that.
 #
 # numbeo refuses datacenter IPs (GitHub's hosted runners included) with
 # "503 Access Forbidden", so lib/http.mjs falls back to fetching through
@@ -68,8 +70,11 @@ jobs:
         run: node scraper/crawl-lists.mjs
 
       - name: Extra city pages
-        if: inputs.page_budget != '0'
-        run: node scraper/crawl-cities.mjs --budget=${{ inputs.page_budget }} --max-age-days=${{ inputs.max_age_days || 30 }}
+        # Slow drip: 25 new city pages per run fills the remaining cities in
+        # about three weeks, and the ones already fetched are reused until
+        # --max-age-days. Set repository variable PAGE_BUDGET=0 to pause.
+        if: ${{ (inputs.page_budget || vars.PAGE_BUDGET || '25') != '0' }}
+        run: node scraper/crawl-cities.mjs --budget=${{ inputs.page_budget || vars.PAGE_BUDGET || '25' }} --max-age-days=${{ inputs.max_age_days || 30 }}
 
       - name: Minimum wage by country
         run: node scraper/crawl-minwage.mjs

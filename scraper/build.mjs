@@ -138,7 +138,7 @@ async function main() {
     const cheapestRent = rentVals.length ? Math.min(...rentVals) : null;
     const mwLeftover = (mwMonthlyUsd != null && expenses != null && cheapestRent != null) ? (mwMonthlyUsd - expenses - cheapestRent) : null;
     rows.push([
-      c.name || c.city,
+      c.city,
       c.country,
       c.slug || null,
       round(salary),

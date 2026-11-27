@@ -49,6 +49,10 @@ jobs:
   crawl:
     runs-on: ${{ vars.CRAWL_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 60
+    env:
+      # Optional. A free Jina key lifts the r.jina.ai reader from 20 to 100
+      # requests a minute; without it the crawl still runs, just with more 429s.
+      JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

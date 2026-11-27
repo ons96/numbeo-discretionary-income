@@ -53,16 +53,24 @@ const ipBlocked = (res) =>
 
 /** Fetch a public page through r.jina.ai (it returns the raw HTML here). */
 async function viaReader(url, timeout) {
+  // A free Jina key raises the reader limit from 20 requests a minute to 100,
+  // which is the difference between a daily crawl that mostly succeeds and one
+  // that logs dozens of 429s. Optional: without the key everything still works,
+  // just slower.
+  const headers = {
+    "User-Agent": UA,
+    "X-Return-Format": "html",
+    "X-No-Cache": "true",
+  };
+  const key = process.env.JINA_API_KEY;
+  if (key) headers.Authorization = `Bearer ${key}`;
+
   try {
     const res = await limiter.run(() =>
       fetch(READER + url, {
         redirect: "follow",
         signal: AbortSignal.timeout(Math.max(timeout, 90000)),
-        headers: {
-          "User-Agent": UA,
-          "X-Return-Format": "html",
-          "X-No-Cache": "true",
-        },
+        headers,
       })
     );
     const body = res.ok ? await res.text() : "";

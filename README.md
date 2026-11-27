@@ -208,6 +208,12 @@ original HTML from its own address. The parsers never notice. Two requests a day
 is well inside its free tier, and the workflow log prints `fetched via reader`
 when that path was used.
 
+The optional per-city page pass makes far more requests, so it hits the reader's
+limit: 20 requests a minute without a key. A free Jina key raises that to 100.
+Put it in the repository secrets as `JINA_API_KEY` and `http.mjs` sends it as a
+bearer token; without the secret nothing breaks, the crawl just logs more 429s
+and retries those cities on a later run.
+
 If you do have a machine with a residential IP, set the repository variable
 `CRAWL_RUNNER` to the label of a self-hosted runner and the requests go out
 directly instead; `scripts/vps-crawl.sh` does the same thing from cron without

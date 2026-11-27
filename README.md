@@ -194,12 +194,25 @@ visible in the data rather than silently dropping cities.
 
 ---
 
-## The datacenter problem
+## Getting blocked
 
-numbeo.com answers requests from datacenter IP ranges — GitHub's hosted runners
-are Azure — with **503 Access Forbidden**, cookies or no cookies, any user agent.
-From a normal connection the same URLs return 200. It is an IP-class block, not
-a rate limit, so no header tweak fixes it.
+numbeo.com throttles by IP, and the answer depends on how much that IP has
+already asked for:
+
+* **Too many requests** returns **429** with a `Retry-After` header. That header
+  is authoritative — on 2026-11-27 a burst of ~350 city pages earned
+  `Retry-After: Tue, 1 Dec 2026 08:00:00 +0100`, a four-day ban on that address.
+  Nothing on that IP works until it expires, and the reader service fails too
+  (it fetches as itself but numbeo refuses it as well).
+* **A datacenter IP sometimes** returns **503 Access Forbidden**. It is not the
+  blanket block this file used to claim: the daily GitHub Actions crawl has
+  fetched `prices_by_city.jsp` and `rankings_current.jsp` **directly** from an
+  Azure runner and got 200. The block depends on load, so the reader fallback
+  fires on some days and not others.
+
+Practical rule: pace it. ~19 city pages a day keeps the 571-city dataset inside
+its 30-day refresh window; `PAGE_BUDGET=30` leaves room for retries. Bursts are
+what earn a multi-day ban.
 
 Instead of asking for a server, `scraper/lib/http.mjs` tries the direct request
 first and, if the answer is 403/429/503, fetches the same URL through

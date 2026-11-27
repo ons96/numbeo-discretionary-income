@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-11-26T05:18:01.046Z",
-  "count": 598,
+  "count": 599,
   "cities": [
     {
       "name": "Port Moresby, Papua New Guinea",
@@ -3194,6 +3194,12 @@
       "name": "Zug, Switzerland",
       "crimeIndex": 19.27,
       "safetyIndex": 80.73,
+      "backfilled": true
+    },
+    {
+      "name": "Fethiye, Turkey",
+      "crimeIndex": 21.87,
+      "safetyIndex": 78.13,
       "backfilled": true
     }
   ]

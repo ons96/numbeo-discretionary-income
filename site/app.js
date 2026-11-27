@@ -397,6 +397,7 @@ const SCOPE_NOTE = {
   province: ["§", "provincial minimum wage"],
   canton: ["§", "cantonal minimum wage"],
   city: ["§", "city minimum wage"],
+  region: ["§", "regional minimum wage"],
 };
 
 // Name the jurisdiction the rate comes from: Toronto is a city in Ontario, and

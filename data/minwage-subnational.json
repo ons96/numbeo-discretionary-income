@@ -299,6 +299,66 @@
         "Xi'an": "Shaanxi",
         "Qingdao, Shandong": "Shandong"
       }
+    },
+    "Indonesia": {
+      "currency": "IDR",
+      "default": null,
+      "period": "month",
+      "regionScope": "province",
+      "effective": "2026",
+      "source": "Indonesian provincial minimum wage (UMP) 2026, Kemnaker; Denpasar city (UMK)",
+      "sourceUrl": "https://satudata.kemnaker.go.id/data/kumpulan-data/3005",
+      "regions": {
+        "Jakarta": 5729876,
+        "Bali": 3207459,
+        "West Java": 2317601
+      },
+      "cityRates": {
+        "Denpasar": 3499878.78
+      },
+      "cityRegion": {
+        "Jakarta": "Jakarta",
+        "Bandung": "West Java",
+        "Denpasar": "Bali",
+        "Bali": "Bali"
+      }
+    },
+    "Vietnam": {
+      "currency": "VND",
+      "default": null,
+      "period": "month",
+      "regionScope": "region",
+      "effective": "2026",
+      "source": "Vietnam regional minimum wage 2026, Decree 293/2025/ND-CP (Region I)",
+      "sourceUrl": "https://www.vietnam-briefing.com/news/vietnams-new-minimum-wage-january-1-2026.html/",
+      "regions": {
+        "Region I": 5310000,
+        "Region II": 4730000,
+        "Region III": 4140000,
+        "Region IV": 3700000
+      },
+      "cityRegion": {
+        "Hanoi": "Region I",
+        "Ho Chi Minh City": "Region I",
+        "Da Nang": "Region I"
+      }
+    },
+    "Philippines": {
+      "currency": "PHP",
+      "default": null,
+      "period": "day",
+      "regionScope": "region",
+      "effective": "2026",
+      "source": "Philippines regional daily minimum wage 2026 (NCR Wage Order NCR-28, ROVII-27)",
+      "sourceUrl": "https://nwpc.dole.gov.ph/",
+      "regions": {
+        "NCR": 755,
+        "Region VII": 582
+      },
+      "cityRegion": {
+        "Manila": "NCR",
+        "Cebu": "Region VII"
+      }
     }
   }
 }

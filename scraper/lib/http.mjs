@@ -69,7 +69,10 @@ async function viaReader(url, timeout) {
     const res = await limiter.run(() =>
       fetch(READER + url, {
         redirect: "follow",
-        signal: AbortSignal.timeout(Math.max(timeout, 90000)),
+        // 25s, not 90s: when numbeo blocks a runner the reader usually answers 429/5xx
+        // quickly, and a long timeout turns a blocked crawl into a 25-minute crawl.
+        // READER_TIMEOUT_MS raises it if a page is genuinely slow to render.
+        signal: AbortSignal.timeout(Math.max(timeout, Number(process.env.READER_TIMEOUT_MS || 25000))),
         headers,
       })
     );

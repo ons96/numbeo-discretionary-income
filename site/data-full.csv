@@ -164,6 +164,7 @@ Brighton,United Kingdom,Brighton,3794.39,1227,1897.2,1454.23,2846.99,2196.05,72,
 Vienna,Austria,Vienna,3560.79,1135.9,1298.28,927.43,2549.7,1784.31,67.5,29,49.7,61.8,73.6,153.9,1731,195.7,0,70.3,,,,,,,,,,,Nov 2026,0
 Nuremberg,Germany,Nuremberg,3366.62,1087,875.02,622.19,1692.29,1352.43,63.8,20.1,43.6,56.4,67.5,167,1538,201,0,66.5,12.82,EUR,hour,14.07,2438,2025,OECD; International Labour Organization (ILOSTAT),country,,901,,1
 Karlsruhe,Germany,Karlsruhe,3454.13,1204.5,947.37,829.82,1839.78,1296.63,67.1,21.8,46.2,61.1,64.4,161.8,1637,214.7,0,63,12.82,EUR,hour,14.07,2438,2025,OECD; International Labour Organization (ILOSTAT),country,,802,Nov 2026,0
+Seoul,South Korea,Seoul,3435.59,1132.2,928.04,655.12,3066.41,1483.94,70.9,27.2,50.7,80.1,46.3,146.1,1627,157.1,0,74.4,10030,KRW,hour,7.46,1294,2025,OECD; International Labour Organization (ILOSTAT),country,,-333,Nov 2026,0
 Salzburg,Austria,Salzburg,3726.81,1276.3,1484.44,1135.97,2381.69,1933.26,71.8,30.7,52.8,70.9,69.5,151.7,1921,208.3,0,79.5,,,,,,,,,,,Nov 2026,0
 Cork,Ireland,Cork,3855.22,1159,2210.3,1781.6,3143.83,2686.08,68,43.5,56.7,69.3,75.6,144.8,2054,189.8,0,63,13.5,EUR,hour,14.81,2568,2025,OECD; International Labour Organization (ILOSTAT),country,,513,,1
 Rennes,France,Rennes,3122.56,972.7,819.67,650.53,1479.51,1065.68,60,17.8,40.5,66.1,58.2,167.1,1328,199.7,0,41.9,11.88,EUR,hour,13.04,2260,2025,OECD; International Labour Organization (ILOSTAT),country,,932,Nov 2026,0
@@ -171,12 +172,11 @@ Nantes,France,Nantes,3231.51,1014.7,869.26,774.55,1664.22,1274.42,63,20.3,43.3,7
 "Winston-Salem, NC",United States,Winston-salem,3622.11,1247,1503,1017,2648.57,1790,73.2,30.8,53.6,98.8,71,145.2,1844,222.6,0,67.3,7.25,USD,hour,7.25,1257,2026,"US DOL consolidated table, revised 2026-11-05",country,United States,-587,,1
 Vancouver,Canada,Vancouver,3622.95,1007.1,1711.99,1488.12,2949.32,2522.76,61.9,38.5,51.1,69.1,60.6,151.5,1848,177.7,0,57.2,18.25,CAD,hour,12.82,2221,2026,Government of Canada minimum wage database,province,British Columbia,373,Nov 2026,0
 Norwich,United Kingdom,Norwich,3468.91,1196,1284.26,966.09,1901.57,1495.03,70.2,25,49.3,69.6,77.1,151.7,1694,206.6,0,74,12.02,GBP,hour,15.75,2731,2025,OECD; International Labour Organization (ILOSTAT),country,,1036,,1
-Stockholm,Sweden,Stockholm,3560.73,1215,1540.52,1022.14,2783.15,1719.65,71.3,31.3,52.8,66.2,73.3,144.8,1788,172.3,0,53.9,,,,,,,,,,,,1
+Stockholm,Sweden,Stockholm,3568.71,1221,1544.3,1024.43,2789.99,1723.87,71.3,31.3,52.8,66.2,73.3,144.8,1796,172.3,0,53.9,,,,,,,,,,,Nov 2026,0
 Glasgow,United Kingdom,Glasgow,3497.72,1085,1397.9,1043.9,2738.26,1971.08,63.7,31.7,48.9,60.5,64.7,153.2,1742,187.2,0,55.3,12.02,GBP,hour,15.75,2731,2025,OECD; International Labour Organization (ILOSTAT),country,,988,,1
 "Birmingham, AL",United States,Birmingham-AL,3477.6,1114,1604.75,1145.25,2570,1826.89,65.4,31.6,49.8,74.9,63,149.6,1723,192.1,0,38.5,7.25,USD,hour,7.25,1257,2026,"US DOL consolidated table, revised 2026-11-05",country,United States,-466,,1
 Bonn,Germany,Bonn,3417.34,1137,1033.65,896.95,2085.35,1600.6,66.7,24.9,47.4,64.6,64.5,155.5,1671,218.7,0,60.6,12.82,EUR,hour,14.07,2438,2025,OECD; International Labour Organization (ILOSTAT),country,,768,,1
 Sydney,Australia,Sydney,3910.22,1207.9,2469.54,1722.19,5085.51,2872.23,75.2,53.8,65.3,79.8,65.6,127,2165,177.7,0,66.3,24.53,AUD,hour,16.27,2820,2025,OECD; International Labour Organization (ILOSTAT),country,,655,Nov 2026,0
-Seoul,South Korea,Seoul,3435.41,1208,928,655.08,3066.26,1483.87,70.9,27.2,50.7,80.1,46.3,146.1,1703,157.1,0,74.4,10030,KRW,hour,7.46,1294,2025,OECD; International Labour Organization (ILOSTAT),country,,-409,,1
 Paris,France,Paris,3719.62,1225,1588.52,1232.22,3580.2,2299.38,71.9,38.5,56.5,69.6,70.7,140.8,1991,138.8,0,41.9,11.88,EUR,hour,13.04,2260,2025,OECD; International Labour Organization (ILOSTAT),country,,268,,1
 Bremen,Germany,Bremen,3214.89,1116,862.63,601.97,1554.87,1132.31,65.5,18.4,43.7,61,65,159.5,1493,204,0,50.9,12.82,EUR,hour,14.07,2438,2025,OECD; International Labour Organization (ILOSTAT),country,,945,,1
 Uppsala,Sweden,Uppsala,3282.25,1113,1021.46,766.36,1553.42,1366.51,65.3,20.8,44.8,68.2,62.6,158.6,1569,215.8,0,57.1,,,,,,,,,,,,1
@@ -269,8 +269,8 @@ Nanjing,China,Nanjing,1754.61,508.6,494.62,286.35,1033.62,535.56,30.1,10.4,21,32
 Granada,Spain,Granada,2167.34,779,831.84,681.46,1218.28,962.75,45.7,16.4,32.1,46,44,145.6,1100,201.1,0,62.8,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,661,,1
 Wellington,New Zealand,Wellington,2666.28,1033,1151.43,1048.59,1967.39,1752.33,60.6,26.2,44.7,67.8,53.1,128.2,1617,181.8,0,66.5,23.41,NZD,hour,12.81,2221,2025,OECD; International Labour Organization (ILOSTAT),country,,604,,1
 Shenzhen,China,Shenzhen,1908.77,596.1,754.16,478.22,1581.79,810.81,38.4,16,28.1,42,24.6,150.8,866,147.8,0,75.9,2700,CNY,month,2.33,404,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Shenzhen,-462,Nov 2026,0
+Madrid,Spain,Madrid,2503.92,894.7,1552.43,1213.16,2946.67,1968.55,54.5,34,45,51.4,58.5,118.4,1551,176.2,0,70.4,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,210,Nov 2026,0
 Prague,Czech Republic,Prague,2316.97,886,1182.48,988.75,2226.42,1521.83,52,26.2,40.1,45.6,43.6,123.7,1393,172.3,0,75.4,,,,,,,,,,,,1
-Madrid,Spain,Madrid,2504.54,929,1552.81,1213.46,2947.39,1969.04,54.5,34,45,51.4,58.5,118.4,1585,176.2,0,70.4,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,176,,1
 Turku,Finland,Turku,2393.06,1096,849.99,660.86,1467.98,1138.32,64.3,18.2,43,60.4,72.1,120.5,1475,206.3,0,78,,,,,,,,,,,,1
 Bolzano-Bozen,Italy,Bolzano-Bozen,2351.24,950.6,934.61,843.26,1617.89,1488.19,59.2,21.6,41.8,53.3,56.6,121.3,1447,195.9,0,71.2,,,,,,,,,,,Nov 2026,0
 Tartu,Estonia,Tartu,2072.69,907,635.61,456.58,1173.16,832.19,53.2,13.7,35,46.7,61.6,128.7,1184,191.8,1,78.2,5.31,EUR,hour,5.83,1010,2025,OECD; International Labour Organization (ILOSTAT),country,,-174,,1
@@ -282,22 +282,21 @@ Riyadh,Saudi Arabia,Riyadh,2056.21,803,1162.8,859.84,2129.79,1251.07,47.1,23.9,3
 Genoa,Italy,Genoa,2113.68,995,778.93,576.98,1385.36,928.77,58.4,16.2,38.9,60,61,117.8,1305,161.1,0,54.2,,,,,,,,,,,,1
 Xi'an,China,Xi'an,1398.77,475,286.6,188.13,700.74,359.75,26.9,6.8,17.6,31.4,17.2,176.2,595,179.1,0,84.4,2376,CNY,month,2.05,356,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Xi'an,-239,Nov 2026,0
 Vigo,Spain,Vigo,1957.64,818,947.97,714.04,1422.12,1028.56,48,18.2,34.2,48.4,47.9,123.2,1161,217.9,0,78.8,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,600,,1
+Seville (Sevilla),Spain,Sevilla,1897.88,750.8,932.42,693.57,1542.6,1100.49,45.7,18.9,33.3,45.5,46.8,122.5,1118,187.5,0,62.9,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,644,Nov 2026,0
 Suzhou,China,Suzhou,1555.76,593,381.63,220.83,1010.44,553.47,33.5,9.6,22.4,35.6,26.6,150.2,777,182.5,0,89,2660,CNY,month,2.3,399,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Suzhou,-379,Nov 2026,0
 Al Khobar,Saudi Arabia,Al-Khobar,1847.85,784,737.61,531.12,1246.3,871.72,46,15,31.6,40.6,40.8,126.2,1075,179.1,0,87.7,4000,SAR,month,6.15,1067,2024,OECD; International Labour Organization (ILOSTAT),country,,-8,,1
 Katowice,Poland,Katowice,1707.77,673,656.22,514.38,973.82,794.1,39.5,13,27.3,34,40.7,135.4,938,163.4,0,65.9,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,205,,1
-Seville (Sevilla),Spain,Sevilla,1898.35,779,932.65,693.74,1542.98,1100.76,45.7,18.9,33.3,45.5,46.8,122.5,1146,187.5,0,62.9,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,615,,1
 Modena,Italy,Modena,2226.68,1031,829.26,647.83,1660.05,1329.87,60.5,19.8,41.7,61.6,68.1,115.4,1474,159.9,0,49.8,,,,,,,,,,,,1
 Turin,Italy,Turin,2077.16,1003.5,844.54,585,1469.52,982.44,58.4,17.2,39.4,58.6,60.8,114.4,1331,142,0,47.9,,,,,,,,,,,Nov 2026,0
 Guangzhou,China,Guangzhou,1503.32,597.6,513.34,268.81,1216.79,502.61,35.5,11.1,24.2,38.4,23.6,134.3,765,137.7,0,72,2680,CNY,month,2.32,402,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Guangzhou,-364,Nov 2026,0
+Oviedo,Spain,Oviedo,1945.92,851.8,889.9,659.47,1423.34,1068.76,50.8,17.9,35.6,47.9,61.6,117.9,1208,208.7,0,85.6,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,553,Nov 2026,0
 Poznan,Poland,Poznan,1732.86,719,760.77,580.28,1144.83,831.93,42.2,14.7,29.5,35.8,43.3,126.9,996,158.9,0,72.4,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,146,,1
 Chengdu,China,Chengdu,1357.21,470,428.45,226.73,751.48,464.66,27.5,8.3,18.6,31.9,20.1,157.7,625,182.3,0,79.9,2330,CNY,month,2.01,349,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Chengdu,-276,Nov 2026,0
 Maribor,Slovenia,Maribor,1816.73,849,647.78,498.29,926.06,711.76,49.8,12.3,32.5,50.5,45.5,124,1086,198.7,0,77.5,1277.72,EUR,month,8.09,1402,2025,OECD; International Labour Organization (ILOSTAT),country,,316,,1
 Taipei,Taiwan,Taipei,1878.39,847,944.12,451.37,1443.89,902.78,49.7,16.6,34.4,62.1,31.1,118.1,1148,152.5,0,83.5,,,,,,,,,,,,1
 Shanghai,China,Shanghai,1712.17,599.2,1065.93,574.61,2700.92,1159.47,38.3,24.3,31.9,39.5,25.7,114.3,986,126.7,0,73.9,2740,CNY,month,2.37,410,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Shanghai,-575,Nov 2026,0
 Beijing,China,Beijing,1672.87,592.1,913.99,516.36,2067.57,1067.57,37.3,20.2,29.4,36.8,25.5,121.6,948,115.5,0,74.7,2540,CNY,month,2.2,381,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Beijing,-567,Nov 2026,0
-Oviedo,Spain,Oviedo,1946.39,866,890.12,659.63,1423.68,1069.02,50.8,17.9,35.6,47.9,61.6,117.9,1222,208.7,0,85.6,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,539,,1
 Gdansk,Poland,Gdansk,1912.97,812.4,920.05,688.85,1524.89,1142.81,44.6,19,32.7,37.4,47.8,125.8,1193,151.6,0,68.8,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,-51,Nov 2026,0
-Johannesburg,South Africa,Johannesburg,1669.21,671,488.4,384.12,1035.3,836.41,39.4,12.1,26.8,33.6,36.6,134.7,950,138.1,0,19.2,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-677,,1
 Barcelona,Spain,Barcelona,2344.72,949,1650.1,1296.55,2709.2,2053.99,55.7,34.1,45.7,54.6,58.3,109.2,1634,145.5,0,48,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,128,,1
 Jeddah (Jiddah),Saudi Arabia,Jeddah-Jiddah,1734.91,748,925.1,629.88,1424.95,847.3,43.9,16.9,31.5,37.4,43.2,118.8,1030,158.2,0,75.2,4000,SAR,month,6.15,1067,2024,OECD; International Labour Organization (ILOSTAT),country,,36,,1
 Warsaw,Poland,Warsaw,1980.95,806,1122.15,900.45,2084.01,1416.16,47.3,24.5,36.7,39.5,49.4,115.4,1278,150.1,0,74.5,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,-135,,1
@@ -310,6 +309,7 @@ Zagreb,Croatia,Zagreb,1927.86,894.1,881.26,669,1507.32,1047.56,50.6,18.2,35.6,51
 Chongqing,China,Chongqing,1304.82,492.7,391.93,186.12,776.86,387.11,28.1,7.7,18.7,34,18.3,151.4,622,173.4,0,76,2330,CNY,month,2.01,349,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Chongqing,-273,Nov 2026,0
 Krakow (Cracow),Poland,Krakow-Cracow,1862.45,819.9,880.68,697.32,1480.69,1140.17,45.4,18.6,33,38.6,46.2,121.6,1200,144.9,0,74.9,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,-57,Nov 2026,0
 Szczecin,Poland,Szczecin,1645.16,709.6,661.49,541.17,1210,863.2,40,14.5,28.2,34.5,37.1,125.9,997,189.5,0,70.5,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,145,Nov 2026,0
+Johannesburg,South Africa,Johannesburg,1669.28,744.3,488.41,384.14,1035.35,836.45,39.4,12.1,26.8,33.6,36.6,134.7,1023,138.1,0,19.2,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-751,Nov 2026,0
 Trieste,Italy,Trieste,1986.74,1019,776.82,639.72,1373.31,997.31,59.8,16.8,39.9,60.4,65,107.9,1351,167.8,0,72.4,,,,,,,,,,,,1
 Kaunas,Lithuania,Kaunas,1717.93,851.5,660.02,474.36,1030.35,694.5,48.3,12.7,31.8,44.4,52.6,119.8,1083,177.4,0,63.6,6.35,EUR,hour,6.97,1208,2025,OECD; International Labour Organization (ILOSTAT),country,,125,Nov 2026,0
 Plzen,Czech Republic,Plzen,1808.39,866.8,750.6,721.47,958.87,930.81,49.4,14.9,33.5,48.6,44.1,117.1,1177,186.2,0,70.4,,,,,,,,,,,Nov 2026,0
@@ -325,6 +325,7 @@ Kaohsiung,Taiwan,Kaohsiung,1534.72,734,439.61,323.48,943.37,655.39,43.1,10.5,28,
 Ajman,United Arab Emirates,Ajman,2246.43,748,2323.58,802.72,1572.5,2752.89,43.9,33,38.9,34.4,37.1,122.4,1272,153.4,0,88,,,,,,,,,,,,1
 Larnaca,Cyprus,Larnaca,1847.69,850,985.6,752.56,1607.42,1251.21,49.9,20.4,36.2,46,48.2,109.7,1267,169.7,0,71,1088,EUR,month,6.89,1194,2026,OECD; International Labour Organization (ILOSTAT),country,,-73,,1
 Hangzhou,China,Hangzhou,1346.43,571.8,559.44,332.45,1102.12,592.4,34.6,11.4,23.9,38.1,23.4,121.6,769,163.3,0,85.3,2660,CNY,month,2.3,399,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,Hangzhou,-371,Nov 2026,0
+Alicante,Spain,Alicante,1854.04,791.1,1084.72,869.45,1749.75,1469.45,48.4,22.9,36.6,46,58.4,108.5,1281,189.9,0,63.7,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,480,Nov 2026,0
 "Qingdao, Shandong",China,Qingdao,1169.42,482.7,308.35,176.87,711.8,342.49,28.6,6.8,18.5,34.6,18.9,137.3,597,179.3,0,88.4,2400,CNY,month,2.07,360,2026,"MOHRSS provincial tier-1 monthly minimums via Choi & Huang, 25 Sep 2026",city,"Qingdao, Shandong",-237,Nov 2026,0
 Ljubljana,Slovenia,Ljubljana,2008.83,918,1123.73,897.87,2178.64,1557.61,53.9,25.5,40.8,50,54.7,105.6,1437,175.1,0,78.2,1277.72,EUR,month,8.09,1402,2025,OECD; International Labour Organization (ILOSTAT),country,,-35,,1
 Kuala Lumpur,Malaysia,Kuala-Lumpur,1330.86,570.8,679.52,345.2,1248.61,580.68,35.9,12.6,25.1,42.1,26.8,114.2,764,135.3,0,41.1,1500,MYR,month,2.1,364,2024,OECD; International Labour Organization (ILOSTAT),country,,-400,Nov 2026,0
@@ -335,29 +336,28 @@ Malaga,Spain,Malaga,1924.08,823,1406.7,1083.65,2343.7,1619.68,48.3,28.6,39.2,46.
 Sofia,Bulgaria,Sofia,1721.15,833,756.99,571.11,1482.92,1004.35,48.9,16.9,34.1,46.5,57.2,111.9,1168,139.3,0,61.6,620,EUR,month,3.93,680,2026,OECD; International Labour Organization (ILOSTAT),country,,-487,,1
 Taichung,Taiwan,Taichung,1529.84,736,382.16,265.56,1156.27,725.2,43.2,11.2,28.4,57.1,24.6,116.8,978,165.1,0,85.8,,,,,,,,,,,,1
 Ostrava,Czech Republic,Ostrava,1673.93,796,760.46,541.67,1479.36,993.54,46.7,16.7,32.8,44.6,40.6,110,1127,181.3,0,69.5,,,,,,,,,,,,1
-Alicante,Spain,Alicante,1854.5,825,1084.98,869.66,1750.18,1469.81,48.4,22.9,36.6,46,58.4,108.5,1315,189.9,0,63.7,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,446,,1
 Lodz,Poland,Lodz,1547.49,716,594.38,467.91,1166.8,883.25,42,13.8,29,36.6,42.8,115.5,1010,149.9,0,62.4,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,132,,1
+Valencia,Spain,Valencia,1879.48,798.7,1454.76,1087.31,2383.3,1669.25,48.8,29.2,39.7,43.5,57.4,100.8,1355,182.3,0,61.1,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,406,Nov 2026,0
 Ad Dammam,Saudi Arabia,Ad-Dammam,1491.53,742.9,528.33,383.22,952.26,677.12,38.5,11.2,25.9,38,30,124.7,969,146.4,0,72,4000,SAR,month,6.15,1067,2024,OECD; International Labour Organization (ILOSTAT),country,,98,Nov 2026,0
 Aveiro,Portugal,Aveiro,1643.81,712.4,1079.45,807.11,1744.68,1239.66,44.8,21.6,34.1,43.7,42.6,103.4,1126,195.5,0,72.8,1015,EUR,month,6.43,1114,2025,OECD; International Labour Organization (ILOSTAT),country,,-12,Nov 2026,0
-Pretoria,South Africa,Pretoria,1377.29,642,430.36,348.29,1049.12,686.3,37.7,11.1,25.4,30,29.9,117.4,871,139.7,0,18.7,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-598,,1
-Cape Town,South Africa,Cape-Town,1587.87,654,978.57,631.83,1773.86,1300.6,38.4,20.7,30.3,34.3,35.5,112.1,1088,153.6,0,26.3,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-815,,1
 Trento,Italy,Trento,1991.36,1053,1037.92,804.63,1701.21,1316.44,61.8,21.5,43.2,58.2,70.5,99.6,1492,185.8,0,63.6,,,,,,,,,,,,1
 Milan,Italy,Milan,2285.98,1127,1684.09,1129.86,3471.41,1984.26,68.5,36.6,53.7,66.9,69.8,90.9,1788,119.5,0,45.9,,,,,,,,,,,Nov 2026,0
 Cagliari,Italy,Cagliari,1774.07,942,877.39,665.28,1364.75,1005.84,57.3,17.3,38.8,60.1,65.4,98.9,1277,184.8,0,62.8,,,,,,,,,,,Nov 2026,0
 Palermo,Italy,Palermo,1620.24,886,678.6,454.39,1086.58,712.75,52,13,34,52.7,49.5,103.6,1124,156.4,0,53.6,,,,,,,,,,,,1
 Budapest,Hungary,Budapest,1710.62,818,794.87,625.85,1583.19,1193.12,48,18.6,34.4,43.6,49.1,107.1,1216,138.6,0,66.3,1672,HUF,hour,4.93,855,2025,OECD; International Labour Organization (ILOSTAT),country,,-360,,1
-Valencia,Spain,Valencia,1879.94,832,1455.12,1087.58,2383.89,1669.65,48.8,29.2,39.7,43.5,57.4,100.8,1389,182.3,0,61.1,9.26,EUR,hour,10.16,1761,2025,OECD; International Labour Organization (ILOSTAT),country,,373,,1
 Hyderabad,India,Hyderabad,966.92,362.8,242.44,150.32,662.17,348.74,21.9,6.2,14.6,24.8,19.2,143.4,479,167.1,0,57.5,16000,INR,month,1,173,2026,"State minimum wages (unskilled, first zone) via labourlawindia.com, November 2026",state,Telangana,-306,Nov 2026,0
-Durban,South Africa,Durban,1277.21,567,405.65,331.86,695.72,692.51,33.3,9.4,22.3,30.3,30.5,124.4,798,150.2,0,19.5,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-525,,1
 Olomouc,Czech Republic,Olomouc,1577.75,767,709.41,633.03,1209.77,995.23,45,15.7,31.5,42.9,33.5,108.2,1099,193.1,0,82.2,,,,,,,,,,,,1
 Nicosia,Cyprus,Nicosia,1833.34,926.7,771.21,668.03,1672.09,1288.04,52.6,19.5,37.3,49.4,54.6,106,1356,151.3,0,67.5,1088,EUR,month,6.89,1194,2026,OECD; International Labour Organization (ILOSTAT),country,,-162,Nov 2026,0
 Leiria,Portugal,Leiria,1538.37,717,952.05,751.67,1264.63,1043.9,42.1,17.8,30.9,39.1,41.6,107.2,1065,198.9,0,68,1015,EUR,month,6.43,1114,2025,OECD; International Labour Organization (ILOSTAT),country,,49,,1
+Cape Town,South Africa,Cape-Town,1587.95,686.9,978.62,631.86,1773.95,1300.66,38.4,20.7,30.3,34.3,35.5,112.1,1120,153.6,0,26.3,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-848,Nov 2026,0
 Naples,Italy,Naples,1780.28,950.7,955.31,669.23,1814.8,1089.31,55.9,20.1,39.3,57.2,56.8,97.7,1314,118,0,38,,,,,,,,,,,Nov 2026,0
 Rome,Italy,Rome,2037.62,1019,1331.84,881.92,2619.16,1668.78,59.8,28.8,45.5,58.5,62.1,96.1,1575,145.9,0,53,,,,,,,,,,,,1
 Verona,Italy,Verona,1906.5,1060,953.04,665.85,1871.33,1166.88,62.2,20.6,43,65.9,63.2,95.8,1449,163.2,0,64.7,,,,,,,,,,,,1
+Durban,South Africa,Durban,1277.27,589.6,405.67,331.88,695.75,692.54,33.3,9.4,22.3,30.3,30.5,124.4,820,150.2,0,19.5,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-548,Nov 2026,0
 Osijek,Croatia,Osijek,1504.92,789.1,639.26,443.39,1166.41,825.16,44.3,13.6,30.1,42.9,46.5,108.1,1064,206.7,0,83,970,EUR,month,6.14,1064,2025,OECD; International Labour Organization (ILOSTAT),country,,0,Nov 2026,0
 Brescia,Italy,Brescia,1974.64,1094,913.16,740.17,1856.55,1340.7,64.2,21.5,44.5,65.6,69.5,96,1541,142.6,0,48.4,,,,,,,,,,,,1
 Moscow,Russia,Moscow,1766.72,844,1467.38,816.3,3006.13,1508.23,49.5,30.1,40.6,42.4,47.5,96.6,1347,122.1,0,65.1,22440,RUB,month,1.58,273,2025,OECD; International Labour Organization (ILOSTAT),country,,-1074,,1
+Pretoria,South Africa,Pretoria,1377.36,731.9,430.38,348.3,1049.17,686.33,37.7,11.1,25.4,30,29.9,117.4,961,139.7,0,18.7,4776.85,ZAR,month,1.57,272,2024,OECD; International Labour Organization (ILOSTAT),country,,-688,Nov 2026,0
 Paphos,Cyprus,Paphos,1821.51,895,1256.7,909.99,2243.89,1539.01,52.5,26.3,40.4,46.7,55,96.5,1408,185.6,0,69,1088,EUR,month,6.89,1194,2026,OECD; International Labour Organization (ILOSTAT),country,,-214,,1
 Coimbra,Portugal,Coimbra,1502.91,747.4,938.06,710.07,1469.14,1027.06,45.1,18.4,32.8,43,44.5,98.7,1090,201.4,0,76.9,1015,EUR,month,6.43,1114,2025,OECD; International Labour Organization (ILOSTAT),country,,24,Nov 2026,0
 Szeged,Hungary,Szeged,1347.86,746,499.58,363.67,725.37,588.25,43.8,9.6,28,43.9,39.3,104.7,942,177.8,0,76.6,1672,HUF,hour,4.93,855,2025,OECD; International Labour Organization (ILOSTAT),country,,-87,,1
@@ -498,16 +498,16 @@ Nagpur,India,Nagpur,269.88,340.9,240.72,152.88,430.82,311.17,20.5,5,13.3,21.3,17
 Bishkek,Kyrgyzstan,Bishkek,539.26,488.8,596.27,408.79,1088.27,713.77,28.6,12.4,21.1,28,26.2,54.8,727,105.7,0,50.4,2534,KGS,month,0.17,29,2024,OECD; International Labour Organization (ILOSTAT),country,,-698,Nov 2026,0
 Marrakech,Morocco,Marrakech,479.28,521,498.19,351.66,697.05,437.35,30.6,8.8,20.5,28.5,27.8,50.7,667,113,0,55,3120,MAD,month,1.8,312,2024,OECD; International Labour Organization (ILOSTAT),country,,-355,,1
 Lima,Peru,Lima,655.05,593,740.7,408.24,1309.82,763.2,34.8,14.3,25.3,36.1,29.7,55.6,847,89.3,0,29.8,1130,PEN,month,1.88,326,2025,OECD; International Labour Organization (ILOSTAT),country,,-522,,1
-Hanoi,Vietnam,Hanoi,452.29,467,434.3,278.63,866.65,547.91,27.4,9.4,19.1,29.7,17.5,52.6,650,87.7,0,66.4,,,,,,,,,,,,1
+Hanoi,Vietnam,Hanoi,452.29,467,434.3,278.63,866.65,547.91,27.4,9.4,19.1,29.7,17.5,52.6,650,87.7,0,66.4,5310000,VND,month,1.19,206,2026,"Vietnam regional minimum wage 2026, Decree 293/2025/ND-CP (Region I)",region,Region I,-444,,1
 Kathmandu,Nepal,Kathmandu,292.55,419,245.03,111.7,455.93,216.73,24.6,4.6,15.4,23.8,20.6,41.6,491,82.4,0,63.7,,,,,,,,,,,,1
 Gaborone,Botswana,Gaborone,427.66,516.7,334.11,198.79,516.69,335.9,30.4,6.1,19.2,27.5,29.6,48.5,629,133.4,0,45.9,,,,,,,,,,,Nov 2026,0
 Quito,Ecuador,Quito,584.56,571,552.33,356.08,1129.08,647.33,33.5,11.9,23.5,32.2,39.1,53.6,787,121.3,0,36.9,470,USD,month,2.71,470,2024,OECD; International Labour Organization (ILOSTAT),country,,-317,,1
 Merida,Mexico,Merida,781.37,684.5,614.21,442.49,1190.67,905.8,40.1,14,28.1,41.2,44.1,60.5,986,163.5,0,76.1,278.8,MXN,day,1.77,311,2025,OECD; International Labour Organization (ILOSTAT),country,,-675,Nov 2026,0
 Dhaka,Bangladesh,Dhaka,241.4,384.4,132.51,65.47,384.97,195.57,23.9,3.4,14.4,27.4,17.9,36.6,450,56.5,0,38.3,12500,BDT,month,0.58,100,2024,OECD; International Labour Organization (ILOSTAT),country,,-350,Nov 2026,0
 Erbil (Irbil),Iraq,Erbil-Irbil-Iraq,517.26,593,432.09,271.95,695.7,406.84,30.2,8,20,26.7,33.7,56.3,729,126.6,0,69.4,350000,IQD,month,1.33,231,2024,OECD; International Labour Organization (ILOSTAT),country,,-497,Nov 2026,0
-Bandung,Indonesia,Bandung,240.01,368.5,210.27,177.98,343.11,250.36,22.1,4.4,13.9,28.1,13.4,37.7,452,122.2,0,60.2,,,,,,,,,,,Nov 2026,0
+Bandung,Indonesia,Bandung,240.01,368.5,210.27,177.98,343.11,250.36,22.1,4.4,13.9,28.1,13.4,37.7,452,122.2,0,60.2,2317601,IDR,month,0.73,126,2026,"Indonesian provincial minimum wage (UMP) 2026, Kemnaker; Denpasar city (UMK)",province,West Java,-326,Nov 2026,0
 Bogota,Colombia,Bogota,711.78,641.3,664.87,443.9,1296.02,884.33,36.9,14.3,26.5,37.4,33.8,57,936,102.3,0,33.3,1423500,COP,month,2.3,398,2025,OECD; International Labour Organization (ILOSTAT),country,,-538,Nov 2026,0
-Ho Chi Minh City,Vietnam,Ho-Chi-Minh-City,492.17,486,616.32,297.2,1325.89,714.07,28.5,13.1,21.4,33.2,17.3,49.4,724,76.1,0,50.5,,,,,,,,,,,,1
+Ho Chi Minh City,Vietnam,Ho-Chi-Minh-City,492.17,486,616.32,297.2,1325.89,714.07,28.5,13.1,21.4,33.2,17.3,49.4,724,76.1,0,50.5,5310000,VND,month,1.19,206,2026,"Vietnam regional minimum wage 2026, Decree 293/2025/ND-CP (Region I)",region,Region I,-518,,1
 Alexandria,Egypt,Alexandria,135.77,324,131.13,65.06,286.1,139.06,19,2.8,11.5,19.3,15.9,25.9,370,89.8,0,54.5,6000,EGP,month,0.63,109,2024,OECD; International Labour Organization (ILOSTAT),country,,-261,,1
 "Batumi, Ajara",Georgia,Batumi,599.82,608.1,491.46,367.57,951.97,680.8,34.2,11,23.5,33.9,35.4,55.2,835,149.3,0,80.2,20,GEL,month,0.04,8,2024,OECD; International Labour Organization (ILOSTAT),country,,-827,Nov 2026,0
 Lahore,Pakistan,Lahore,186.8,353,172.36,92.66,364.91,210.61,20.7,3.7,12.9,17.6,19.3,31.7,423,98.4,0,64.1,37000,PKR,month,0.77,134,2024,OECD; International Labour Organization (ILOSTAT),country,,-289,,1
@@ -516,7 +516,7 @@ Tangier,Morocco,Tangier,481.5,561,532.43,361.42,836.46,493.03,32.9,9.8,22.2,32.7
 Thane,India,Thane,290.75,375.4,336.73,221.24,705.26,479.13,23.1,7.7,16,24,19.4,39.4,535,97.8,0,69.2,14155,INR,month,0.88,153,2026,"State minimum wages (unskilled, first zone) via labourlawindia.com, November 2026",state,Maharashtra,-382,Nov 2026,0
 Baghdad,Iraq,Baghdad,521.8,572,535.21,353.79,983,620.88,29.4,11,20.9,24.4,25.8,53.8,779,54.9,0,46.8,350000,IQD,month,1.33,231,2024,OECD; International Labour Organization (ILOSTAT),country,,-548,Nov 2026,0
 Puerto Vallarta,Mexico,Puerto-Vallarta,837.78,707.5,1207.13,644.14,1883.4,1163.18,43.3,21.8,33.4,47.1,43.9,54.1,1095,140.6,0,62.5,278.8,MXN,day,1.77,311,2025,OECD; International Labour Organization (ILOSTAT),country,,-784,Nov 2026,0
-Jakarta,Indonesia,Jakarta,397.29,477,345.27,193.84,1121.45,547.54,27.7,9.8,19.4,33.8,16.5,44.2,660,73.2,0,47.3,,,,,,,,,,,Nov 2026,0
+Jakarta,Indonesia,Jakarta,397.29,477,345.27,193.84,1121.45,547.54,27.7,9.8,19.4,33.8,16.5,44.2,660,73.2,0,47.3,5729876,IDR,month,1.8,312,2026,"Indonesian provincial minimum wage (UMP) 2026, Kemnaker; Denpasar city (UMK)",province,Jakarta,-347,Nov 2026,0
 Buenos Aires,Argentina,Buenos-Aires,975.36,840.7,722.46,496.63,1469.26,1202.24,46.9,17.2,33.2,43.4,57.9,63.4,1241,117.9,0,37.2,271571,ARS,month,0.98,170,2024,OECD; International Labour Organization (ILOSTAT),country,,-1072,Nov 2026,0
 Cancun,Mexico,Cancun,847.1,743.1,845.57,669.21,1649.66,1116.96,42.3,19.1,31.6,44.6,43.7,58,1115,151.7,0,46.6,278.8,MXN,day,1.77,311,2025,OECD; International Labour Organization (ILOSTAT),country,,-804,Nov 2026,0
 Dushanbe,Tajikistan,Dushanbe,428.17,515,628.51,353.04,881.56,559.05,30.2,10.7,21.2,35.5,20.4,43.5,701,134.2,0,50.9,800,TJS,month,0.5,86,2024,OECD; International Labour Organization (ILOSTAT),country,,-615,,1
@@ -525,16 +525,16 @@ Ulaanbaatar,Mongolia,Ulaanbaatar,647.96,605.2,648.66,467.02,1665.47,985.39,33.7,
 Nairobi,Kenya,Nairobi,476.5,585.7,449.24,234.74,1124.32,533.29,32.7,10.4,22.4,33.2,29.2,46.1,763,95.6,0,41.2,16033.14,KES,month,0.71,123,2024,OECD; International Labour Organization (ILOSTAT),country,,-640,Nov 2026,0
 Cairo,Egypt,Cairo-Egypt,188.97,374,218.92,197.83,483.99,313.02,21.7,5.4,14.2,20.7,21.3,29,478,86.1,0,50.4,6000,EGP,month,0.63,109,2024,OECD; International Labour Organization (ILOSTAT),country,,-369,Nov 2026,0
 Rawalpindi,Pakistan,Rawalpindi,166.8,383.4,186.4,88.05,389.12,220.19,21.3,3.9,13.3,21.3,17.6,27.4,457,86.6,0,48.2,37000,PKR,month,0.77,134,2024,OECD; International Labour Organization (ILOSTAT),country,,-323,Nov 2026,0
-Denpasar,Indonesia,Denpasar,231.97,408.4,347.56,151.2,509.44,381.72,23.5,6.2,15.5,26.9,16.7,32.6,536,111.8,0,73,,,,,,,,,,,Nov 2026,0
+Denpasar,Indonesia,Denpasar,231.97,408.4,347.56,151.2,509.44,381.72,23.5,6.2,15.5,26.9,16.7,32.6,536,111.8,0,73,3499878.78,IDR,month,1.1,191,2026,"Indonesian provincial minimum wage (UMP) 2026, Kemnaker; Denpasar city (UMK)",city,Denpasar,-345,Nov 2026,0
 Tunis,Tunisia,Tunis,356.46,532,421.79,280.27,721.66,410.12,31.2,8.1,20.6,38.7,19.6,37.7,669,107,0,51.5,491.504,TND,month,0.93,161,2024,OECD; International Labour Organization (ILOSTAT),country,,-508,,1
-Manila,Philippines,Manila,494.51,550,543.52,291.6,1906.5,782.47,32.3,15.6,24.6,37.1,24.3,43.1,811,54.3,0,35.4,,,,,,,,,,,,1
-Da Nang,Vietnam,Da-Nang,428.62,479,552.71,357.2,1241.95,839.57,28.1,13.2,21.2,32,16.6,43.3,759,126.9,0,76.9,,,,,,,,,,,,1
+Manila,Philippines,Manila,494.51,550,543.52,291.6,1906.5,782.47,32.3,15.6,24.6,37.1,24.3,43.1,811,54.3,0,35.4,755,PHP,day,1.48,260,2026,"Philippines regional daily minimum wage 2026 (NCR Wage Order NCR-28, ROVII-27)",region,NCR,-550,,1
+Da Nang,Vietnam,Da-Nang,428.62,479,552.71,357.2,1241.95,839.57,28.1,13.2,21.2,32,16.6,43.3,759,126.9,0,76.9,5310000,VND,month,1.19,206,2026,"Vietnam regional minimum wage 2026, Decree 293/2025/ND-CP (Region I)",region,Region I,-553,,1
 Guayaquil,Ecuador,Guayaquil,586.55,610.7,660,510.36,993.75,924.44,34,13.7,24.6,32.3,33.3,51.3,919,101.2,0,25,470,USD,month,2.71,470,2024,OECD; International Labour Organization (ILOSTAT),country,,-449,Nov 2026,0
 Tehran,Iran,Tehran,206.02,343.4,423.56,251.67,938.18,624,22.3,9.9,16.6,23.3,16.2,26.7,551,68.9,0,42.8,53073300,IRR,month,0.16,29,2024,OECD; International Labour Organization (ILOSTAT),country,,-523,Nov 2026,0
 Dar es Salaam,Tanzania,Dar-Es-Salaam,239,445,525.59,193.73,1324.11,433.93,26.1,11,19.1,24.2,18.1,26.9,590,82.4,0,44.7,,,,,,,,,,,,1
 Kampala,Uganda,Kampala,164.27,428,544,163.12,1557.77,299.54,25.1,11.4,18.8,24.8,20.6,18.8,528,66.7,0,45.1,130000,UGX,month,0.18,31,2024,OECD; International Labour Organization (ILOSTAT),country,,-497,,1
 Yerevan,Armenia,Yerevan,719.21,783.1,1104.89,823.05,1593.62,969.45,44,19.9,32.9,38.7,47.9,48.5,1106,122.5,0,77.9,75000,AMD,month,1.2,208,2024,OECD; International Labour Organization (ILOSTAT),country,,-898,Nov 2026,0
-Cebu,Philippines,Cebu,335.32,523,495.56,329.87,981.55,618.5,30.7,10.7,21.5,34.1,21.4,33.7,729,71.5,0,51.1,,,,,,,,,,,,1
+Cebu,Philippines,Cebu,335.32,523,495.56,329.87,981.55,618.5,30.7,10.7,21.5,34.1,21.4,33.7,729,71.5,0,51.1,582,PHP,day,1.14,201,2026,"Philippines regional daily minimum wage 2026 (NCR Wage Order NCR-28, ROVII-27)",region,Region VII,-528,,1
 Bangkok,Thailand,Bangkok,587.27,690,702.87,345.22,2243.92,914.07,40.5,18.6,30.4,45.1,27.1,41.5,995,79.7,0,61.6,8963,THB,month,1.52,263,2024,OECD; International Labour Organization (ILOSTAT),country,,-731,,1
 Hua Hin,Thailand,Hua-Hin,457.64,590,597.63,538.75,1873.99,915.29,34.6,17.4,26.6,39.2,23.9,36.8,895,120.8,0,68.8,8963,THB,month,1.52,263,2024,OECD; International Labour Organization (ILOSTAT),country,,-632,,1
 Lusaka,Zambia,Lusaka,347.07,595,379.87,174.05,1067.44,592.46,34.9,9.8,23.3,37.3,24.4,32.3,769,,0,55.4,1300,ZMW,month,0.36,62,2024,OECD; International Labour Organization (ILOSTAT),country,,-707,,1
@@ -556,13 +556,13 @@ San Salvador,El Salvador,San-Salvador,379.71,709,898.99,770,1810,1360,41.6,21.4,
 Beirut,Lebanon,Beirut,668.91,1093.2,1017.09,519.64,2403.33,1126,60.1,22.4,42.7,45.6,71.3,33.8,1469,88.5,0,53.3,18000000,LBP,month,1.16,201,2024,OECD; International Labour Organization (ILOSTAT),country,,-1267,Nov 2026,0
 San Miguel de Allende,Mexico,San-Miguel-de-Allende,359.02,742.4,1104.26,619.42,2374.83,1262.6,46,23.8,35.8,52.5,46.7,21.6,1163,110.2,0,50,278.8,MXN,day,1.77,311,2025,OECD; International Labour Organization (ILOSTAT),country,,-852,Nov 2026,0
 Caracas,Venezuela,Caracas,303.55,798,645.77,491.64,1165.17,1002.22,46.8,14.6,31.9,54.9,48.9,20.6,1132,77.5,0,18.6,130,VES,month,0,0,2024,OECD; International Labour Organization (ILOSTAT),country,,-1132,,1
-Bali,Indonesia,Bali,209.51,574.3,933.17,573.75,3053.37,1416.92,32.4,26.5,29.7,41,21.8,14.9,1047,60,0,49,,,,,,,,,,,Nov 2026,0
+Bali,Indonesia,Bali,209.51,574.3,933.17,573.75,3053.37,1416.92,32.4,26.5,29.7,41,21.8,14.9,1047,60,0,49,3207459,IDR,month,1.01,175,2026,"Indonesian provincial minimum wage (UMP) 2026, Kemnaker; Denpasar city (UMK)",province,Bali,-872,Nov 2026,0
 Lagos,Nigeria,Lagos,118.17,464,705.39,412.96,2788.66,1483.2,27.2,23.9,25.7,22.7,30,10.2,877,0,0,30.7,65000,NGN,month,0.27,48,2024,OECD; International Labour Organization (ILOSTAT),country,,-829,,1
 Abidjan,Ivory Coast,Abidjan,212.1,776,817.22,338.11,2813.65,970.97,40.1,21.9,31.7,40.7,33.9,14.3,1100,48.9,0,44.4,,,,,,,,,,,Nov 2026,0
 Agadir,Morocco,Agadir,509.29,,502.92,240.87,585.46,378.5,,,,,,,,112.9,1,64,3120,MAD,month,1.8,312,2024,OECD; International Labour Organization (ILOSTAT),country,,,,0
 "Brooklyn, NY",United States,Brooklyn,3668.32,,3845.71,2490.83,8069.09,4478.18,,,,,,,,138.9,0,54.8,17,USD,hour,17,2947,2026,"US DOL consolidated table, revised 2026-11-05",city,"Brooklyn, NY",,,0
 Bydgoszcz,Poland,Bydgoszcz,1528.24,,680.8,505.95,1241.77,960.98,,,,,,,,166.5,0,59.7,4666,PLN,month,6.59,1143,2025,OECD; International Labour Organization (ILOSTAT),country,,,,0
-Fethiye,Turkey,Fethiye-Turkey,1349,,731.78,527.98,1000.2,735.37,,,,,,,,141.4,1,,,,,,,,,,,,,0
+Fethiye,Turkey,Fethiye-Turkey,1349,,731.78,527.98,1000.2,735.37,,,,,,,,141.4,1,78.1,,,,,,,,,,,,0
 Guatemala City,Guatemala,Guatemala-City,658.02,,825.97,544.31,1545.79,818.47,,,,,,,,,0,37.9,,,,,,,,,,,,0
 Kanpur,India,Kanpur,283.46,,105.26,64.8,301.1,182.84,,,,,,,,108.9,0,52.9,13883.59,INR,month,0.87,150,2026,"State minimum wages (unskilled, first zone) via labourlawindia.com, November 2026",state,Uttar Pradesh,,,0
 Leicester,United Kingdom,Leicester,3330.16,,1065.6,890.02,1726.87,1285.86,,,,,,,,173.8,1,53.3,12.02,GBP,hour,15.75,2731,2025,OECD; International Labour Organization (ILOSTAT),country,,,,0

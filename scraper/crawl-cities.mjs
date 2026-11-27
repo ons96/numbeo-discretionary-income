@@ -180,10 +180,23 @@ async function main() {
         const elapsed = (Date.now() - started) / 1000;
         const rate = done / elapsed;
         const eta = Math.round(queue.length / rate / 60);
+        await flush();
         log(`  ${done}/${done + queue.length} (${failures} failed) ${rate.toFixed(1)}/s eta ${eta}m`);
       }
     }
   }
+
+  // Write after every batch, not only at the end: a cancel, a timeout or a
+  // block used to discard the whole run (150 pages were lost that way once).
+  const flush = async () => {
+    const merged = new Map();
+    for (const hit of cache.values()) merged.set(hit.key || key(hit.country, hit.city), hit);
+    for (const r of records) merged.set(r.key, r);
+    const cities = [...merged.values()].sort((a, b) => String(a.key).localeCompare(String(b.key)));
+    await mkdir("data", { recursive: true });
+    await writeFile(OUT, JSON.stringify({ generatedAt: new Date().toISOString(), header: NICE, count: cities.length, cities }));
+    return cities.length;
+  };
 
   const workers = Array.from({ length: Number(process.env.CONCURRENCY || 2) }, worker);
   await Promise.all(workers);
@@ -198,12 +211,8 @@ async function main() {
   }
   records.sort((a, b) => a.key.localeCompare(b.key));
 
-  await mkdir("data", { recursive: true });
-  await writeFile(
-    OUT,
-    JSON.stringify({ generatedAt: new Date().toISOString(), header: NICE, count: records.length, cities: records })
-  );
-  log(`wrote ${OUT}: ${records.length} records, ${failures} failures${blocked ? " (stopped early: blocked)" : ""}`);
+  const total = await flush();
+  log(`wrote ${OUT}: ${total} records, ${failures} failures${blocked ? " (stopped early: blocked)" : ""}`);
 }
 
 main().catch((e) => {

@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-11-26T05:18:01.046Z",
+  "generatedAt": "2026-11-27T03:00:57.425Z",
   "count": 599,
+  "ranked": 394,
   "cities": [
     {
       "name": "Port Moresby, Papua New Guinea",
@@ -304,8 +305,8 @@
     },
     {
       "name": "Montpellier, France",
-      "crimeIndex": 60.3,
-      "safetyIndex": 39.7
+      "crimeIndex": 60.1,
+      "safetyIndex": 39.9
     },
     {
       "name": "San Francisco, CA, United States",
@@ -554,8 +555,8 @@
     },
     {
       "name": "Los Angeles, CA, United States",
-      "crimeIndex": 53.9,
-      "safetyIndex": 46.1
+      "crimeIndex": 54,
+      "safetyIndex": 46
     },
     {
       "name": "Medellin, Colombia",
@@ -724,8 +725,8 @@
     },
     {
       "name": "Ho Chi Minh City, Vietnam",
-      "crimeIndex": 49.5,
-      "safetyIndex": 50.5
+      "crimeIndex": 49.4,
+      "safetyIndex": 50.6
     },
     {
       "name": "Sacramento, CA, United States",
@@ -734,8 +735,8 @@
     },
     {
       "name": "Orlando, FL, United States",
-      "crimeIndex": 49.2,
-      "safetyIndex": 50.8
+      "crimeIndex": 49,
+      "safetyIndex": 51
     },
     {
       "name": "Phnom Penh, Cambodia",
@@ -859,8 +860,8 @@
     },
     {
       "name": "Liverpool, United Kingdom",
-      "crimeIndex": 46.9,
-      "safetyIndex": 53.1
+      "crimeIndex": 46.7,
+      "safetyIndex": 53.3
     },
     {
       "name": "Kolkata, India",
@@ -1174,8 +1175,8 @@
     },
     {
       "name": "Antwerp, Belgium",
-      "crimeIndex": 39.5,
-      "safetyIndex": 60.5
+      "crimeIndex": 39.6,
+      "safetyIndex": 60.4
     },
     {
       "name": "Brighton, United Kingdom",
@@ -1354,8 +1355,8 @@
     },
     {
       "name": "Lahore, Pakistan",
-      "crimeIndex": 35.9,
-      "safetyIndex": 64.1
+      "crimeIndex": 35.8,
+      "safetyIndex": 64.2
     },
     {
       "name": "Salt Lake City, UT, United States",
@@ -1594,8 +1595,8 @@
     },
     {
       "name": "Madrid, Spain",
-      "crimeIndex": 29.6,
-      "safetyIndex": 70.4
+      "crimeIndex": 29.7,
+      "safetyIndex": 70.3
     },
     {
       "name": "Richmond Hill, Canada",
@@ -1689,8 +1690,8 @@
     },
     {
       "name": "Graz, Austria",
-      "crimeIndex": 27.3,
-      "safetyIndex": 72.7
+      "crimeIndex": 27.7,
+      "safetyIndex": 72.3
     },
     {
       "name": "Utrecht, Netherlands",
@@ -1934,8 +1935,8 @@
     },
     {
       "name": "Muscat, Oman",
-      "crimeIndex": 18.6,
-      "safetyIndex": 81.4
+      "crimeIndex": 19.1,
+      "safetyIndex": 80.9
     },
     {
       "name": "Taipei, Taiwan",

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-27T03:00:57.425Z",
-  "count": 599,
-  "ranked": 394,
+  "generatedAt": "2026-11-28T14:42:06.760Z",
+  "count": 602,
+  "ranked": 397,
   "cities": [
     {
       "name": "Port Moresby, Papua New Guinea",
@@ -275,8 +275,8 @@
     },
     {
       "name": "Naples, Italy",
-      "crimeIndex": 62,
-      "safetyIndex": 38
+      "crimeIndex": 61.9,
+      "safetyIndex": 38.1
     },
     {
       "name": "Dhaka, Bangladesh",
@@ -340,8 +340,8 @@
     },
     {
       "name": "Curitiba, Brazil",
-      "crimeIndex": 59.4,
-      "safetyIndex": 40.6
+      "crimeIndex": 59.5,
+      "safetyIndex": 40.5
     },
     {
       "name": "Washington, DC, United States",
@@ -635,13 +635,13 @@
     },
     {
       "name": "Ulaanbaatar, Mongolia",
-      "crimeIndex": 52,
-      "safetyIndex": 48
+      "crimeIndex": 51.7,
+      "safetyIndex": 48.3
     },
     {
       "name": "Barcelona, Spain",
-      "crimeIndex": 52,
-      "safetyIndex": 48
+      "crimeIndex": 51.9,
+      "safetyIndex": 48.1
     },
     {
       "name": "Rawalpindi, Pakistan",
@@ -650,8 +650,8 @@
     },
     {
       "name": "Thessaloniki, Greece",
-      "crimeIndex": 51.7,
-      "safetyIndex": 48.3
+      "crimeIndex": 51.6,
+      "safetyIndex": 48.4
     },
     {
       "name": "Brescia, Italy",
@@ -1135,13 +1135,13 @@
     },
     {
       "name": "Braga, Portugal",
-      "crimeIndex": 40.4,
-      "safetyIndex": 59.6
+      "crimeIndex": 39.9,
+      "safetyIndex": 60.1
     },
     {
       "name": "Chennai, India",
-      "crimeIndex": 40.2,
-      "safetyIndex": 59.8
+      "crimeIndex": 40.3,
+      "safetyIndex": 59.7
     },
     {
       "name": "Tirana, Albania",
@@ -1250,8 +1250,8 @@
     },
     {
       "name": "Belgrade, Serbia",
-      "crimeIndex": 37.8,
-      "safetyIndex": 62.2
+      "crimeIndex": 37.7,
+      "safetyIndex": 62.3
     },
     {
       "name": "Boise, ID, United States",
@@ -1280,8 +1280,8 @@
     },
     {
       "name": "Palma de Mallorca, Spain",
-      "crimeIndex": 37.2,
-      "safetyIndex": 62.8
+      "crimeIndex": 36.9,
+      "safetyIndex": 63.1
     },
     {
       "name": "Riga, Latvia",
@@ -1475,8 +1475,8 @@
     },
     {
       "name": "Lisbon, Portugal",
-      "crimeIndex": 33.1,
-      "safetyIndex": 66.9
+      "crimeIndex": 33,
+      "safetyIndex": 67
     },
     {
       "name": "Montreal, Canada",
@@ -1565,8 +1565,8 @@
     },
     {
       "name": "Amsterdam, Netherlands",
-      "crimeIndex": 30.1,
-      "safetyIndex": 69.9
+      "crimeIndex": 30,
+      "safetyIndex": 70
     },
     {
       "name": "Geneva, Switzerland",
@@ -1595,8 +1595,8 @@
     },
     {
       "name": "Madrid, Spain",
-      "crimeIndex": 29.7,
-      "safetyIndex": 70.3
+      "crimeIndex": 29.6,
+      "safetyIndex": 70.4
     },
     {
       "name": "Richmond Hill, Canada",
@@ -1630,8 +1630,8 @@
     },
     {
       "name": "Kuwait City, Kuwait",
-      "crimeIndex": 28.7,
-      "safetyIndex": 71.3
+      "crimeIndex": 28.5,
+      "safetyIndex": 71.5
     },
     {
       "name": "Luxembourg, Luxembourg",
@@ -1710,8 +1710,8 @@
     },
     {
       "name": "Zaragoza (Saragossa), Spain",
-      "crimeIndex": 26.4,
-      "safetyIndex": 73.6
+      "crimeIndex": 26.1,
+      "safetyIndex": 73.9
     },
     {
       "name": "Shanghai, China",
@@ -1960,13 +1960,13 @@
     },
     {
       "name": "Ras al-Khaimah, United Arab Emirates",
-      "crimeIndex": 14.7,
-      "safetyIndex": 85.3
+      "crimeIndex": 14.6,
+      "safetyIndex": 85.4
     },
     {
       "name": "Ajman, United Arab Emirates",
-      "crimeIndex": 12,
-      "safetyIndex": 88
+      "crimeIndex": 12.1,
+      "safetyIndex": 87.9
     },
     {
       "name": "Abu Dhabi, United Arab Emirates",
@@ -2107,9 +2107,8 @@
     },
     {
       "name": "Bolzano-Bozen, Italy",
-      "crimeIndex": 28.8,
-      "safetyIndex": 71.2,
-      "backfilled": true
+      "crimeIndex": 27.8,
+      "safetyIndex": 72.2
     },
     {
       "name": "Boulder, CO, United States",
@@ -3201,6 +3200,22 @@
       "name": "Fethiye, Turkey",
       "crimeIndex": 21.87,
       "safetyIndex": 78.13,
+      "backfilled": true
+    },
+    {
+      "name": "Pietermaritzburg, South Africa",
+      "crimeIndex": 81.1,
+      "safetyIndex": 18.9
+    },
+    {
+      "name": "Hermanus, South Africa",
+      "crimeIndex": 55,
+      "safetyIndex": 45
+    },
+    {
+      "name": "Sousse, Tunisia",
+      "crimeIndex": 54.45,
+      "safetyIndex": 45.55,
       "backfilled": true
     }
   ]

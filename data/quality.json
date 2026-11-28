@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-27T03:00:45.740Z",
-  "count": 563,
+  "generatedAt": "2026-11-28T14:41:54.684Z",
+  "count": 564,
   "ranked": 305,
   "cities": [
     {
@@ -6750,6 +6750,18 @@
     {
       "name": "Zapopan, Mexico",
       "qualityOfLifeIndex": 149.99,
+      "safetyIndex": null,
+      "purchasingPowerIndex": null,
+      "healthCareIndex": null,
+      "costOfLivingIndex": null,
+      "trafficIndex": null,
+      "pollutionIndex": null,
+      "climateIndex": null,
+      "backfilled": true
+    },
+    {
+      "name": "Sousse, Tunisia",
+      "qualityOfLifeIndex": 125.61,
       "safetyIndex": null,
       "purchasingPowerIndex": null,
       "healthCareIndex": null,

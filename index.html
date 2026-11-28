@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where your salary goes furthest — city discretionary income ranking</title>
+<meta name="description" content="Cities ranked by how much money is left over each year after tax, living costs and rent. Data from Numbeo, rebuilt automatically.">
+<link rel="stylesheet" href="style.9028868739.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+</head>
+<body class="best-mode">
+<header class="bar">
+  <div class="bar-top">
+    <h1>Where your salary goes furthest</h1>
+    <div class="meta">
+      <span id="updated">loading…</span>
+      <select id="currency" aria-label="Currency"></select>
+    </div>
+  </div>
+
+  <div class="scenarios" role="tablist" aria-label="Rent scenario">
+    <button role="tab" data-scenario="best">Best option</button>
+    <button role="tab" data-scenario="room3brOutside">Room in 3-bed, outside centre</button>
+    <button role="tab" data-scenario="room3brCentre">Room in 3-bed, centre</button>
+    <button role="tab" data-scenario="own1brOutside">Own 1-bed, outside centre</button>
+    <button role="tab" data-scenario="own1brCentre">Own 1-bed, centre</button>
+  </div>
+
+  <div class="filters">
+    <input id="search" type="search" placeholder="Search city or country…" autocomplete="off" spellcheck="false">
+    <select id="country" aria-label="Country"><option value="">All countries</option></select>
+    <label class="toggle"><input id="complete" type="checkbox" checked> Complete data only</label>
+  </div>
+
+  <div class="filters baseline-row">
+    <input id="baseline" list="baseline-list" placeholder="At least as much left over as… (pick a city)" autocomplete="off" spellcheck="false" aria-label="Baseline city">
+    <datalist id="baseline-list"></datalist>
+    <button type="button" id="baseline-clear" hidden>Clear baseline</button>
+  </div>
+</header>
+
+<main>
+  <section id="summary" class="summary"></section>
+  <section id="baseline-panel" class="baseline-panel" hidden></section>
+  <section id="baseline-notice" class="baseline-panel" aria-live="polite" hidden></section>
+
+  <div class="tablewrap">
+    <table id="table">
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th data-sort="city">City</th>
+          <th class="only-best" data-sort="best">Best option</th>
+          <th class="num" data-sort="disc">Left over / year</th>
+          <th class="num" data-sort="disc_m">Left over / month</th>
+          <th class="num hide-sm" data-sort="salary">Net salary / month</th>
+          <th class="num hide-sm" data-sort="expenses">Living costs / month</th>
+          <th class="num" data-sort="rent">Rent / month</th>
+          <th class="num hide-sm" data-sort="share">Rent share of salary</th>
+          <th class="num hide-sm" data-sort="totalMonthlyCost">Total cost / month</th>
+          <th class="num hide-sm" data-sort="minWageMonthlyUsd">Min wage / month</th>
+          <th class="num hide-sm" data-sort="minWageLeftoverMonthly">Min wage leftover / month</th>
+          <th class="num hide-sm" data-sort="qualityOfLifeIndex">Quality of life index (higher = better)</th>
+          <th class="num hide-sm" data-sort="safetyIndex">Safety index (higher = safer)</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="more">
+    <button id="loadmore" hidden>Show more</button>
+    <p id="empty" hidden>No cities match. Loosen the filters.</p>
+  </div>
+
+  <footer>
+    <h2>How this is calculated</h2>
+    <p>
+      Every number comes from <a href="https://www.numbeo.com/cost-of-living/" rel="nofollow noopener">Numbeo</a>,
+      fetched in USD and converted to the currency you pick.
+    </p>
+    <ul>
+      <li><b>Net salary</b> — Numbeo's “Average Monthly Net Salary (After Tax)” × 12.</li>
+      <li><b>Living costs</b> — Numbeo's “estimated monthly costs for a single person, excluding rent” × 12. Where that figure hasn't been collected for a city yet, it is marked <b>≈</b> and estimated from Numbeo's cost-of-living index (the same basket, scaled from New York).</li>
+      <li><b>Rent</b> — either a whole 1-bedroom apartment, or a room in a 3-bedroom flat (a third of the 3-bedroom rent), in the city centre or outside it.</li>
+      <li><b>Baseline</b> — pick any city and the table keeps only the cities that leave at least as much money over as it does, in the selected rent scenario; the chips below are the countries that still have at least one such city.</li>
+      <li><b>Best option</b> — the tab takes, for each city, whichever of the four leaves the most money, and the column says which one that was. Cheapest rent wins in almost every city, but not where a 1-bed is barely dearer than a room.</li>
+      <li><b>Left over</b> — salary − living costs − rent, per year.</li>
+      <li><b>Quality of life / safety</b> — Numbeo indices; higher is better for both. Safety index and crime index are exact complements (they sum to 100), so only safety is shown. Cities not in Numbeo's QoL ranking use their city page, then a country-level estimate marked ≈.</li>
+      <li><b>Min wage</b> — the statutory minimum wage that applies in that city, shown as monthly and (derived) hourly. <b>Min wage leftover</b> is that monthly minimum wage minus living costs and this tab's rent — negative means you cannot survive on minimum wage there. A <span class="est">§</span> marks a rate set below the national level (US state, Canadian province, Indian state, Chinese or Indonesian province, Vietnamese or Philippine region, Swiss canton or city), hover the mark to see which jurisdiction set it; a <span class="est">†</span> marks a national rate used because nothing more local applies. Countries whose only available figure is an average of local or sectoral rates — or that set no statutory minimum at all, such as Switzerland — are left blank rather than estimated.</li>
+      <li><b>≈</b> means the value is an estimate: living costs are scaled from the cost-of-living index when a city's own basket has not been collected, and quality of life falls back to the country figure when a city has no own index.</li>
+    </ul>
+    <p class="caveat">
+      Numbeo figures are crowd-sourced averages, skew towards people who fill in such sites, and can lag reality.
+      A city with a handful of contributors is noise, not truth — treat the tail of the list as a starting point,
+      not a verdict. Safety and quality-of-life are crowd-sourced <b>perceptions</b>, not police crime statistics.
+      The hourly minimum wage is derived at 40 h/week; statutory weeks vary (35-48), so it is an approximation.
+    </p>
+    <p class="links">
+      <a href="data-full.csv" download>Download the full data (all columns, CSV)</a> ·
+      <a href="data.csv" download>Basic CSV</a> ·
+      <a href="https://github.com/ons96/numbeo-discretionary-income">Source &amp; scraper</a>
+    </p>
+    <p class="stamp" id="stamp"></p>
+  </footer>
+</main>
+
+<script src="app.06dc27ec02.js"></script>
+</body>
+</html>
